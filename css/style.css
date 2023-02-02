@@ -8,7 +8,7 @@
     background-attachment: fixed;
 }
 
-/* ÁREA DIABLO */
+/* DEVIL AREA */
 
 .col-left {
     /* background-color: red; */
@@ -23,17 +23,28 @@
     z-index: 2;
 }
 
-/* ÁREA CENTRAL */
+/* CENTRAL AREA */
 
 .col-center {
     /* background-color: grey; */
     height: 50vh;
 }
 
+/* TITLE */
+
+.title {
+    font-family: "blackdemon";
+    font-size: xx-large;
+    text-shadow: 2px 0 rgb(197, 50, 5), -2px 0 rgb(197, 50, 5), 0 2px rgb(197, 50, 5), 0 -2px rgb(197, 50, 5),
+               1px 1px rgb(197, 50, 5), -1px -1px rgb(197, 50, 5), 1px -1px rgb(197, 50, 5), -1px 1px rgb(197, 50, 5);
+}
+
+/* TEXTBOX */
+
 .textbox {
-    background-color: aliceblue;
-    height: 40vh;
-    width: 50vw;
+    background-color: rgba(168, 168, 168, 0.37);
+    height: 30vh;
+    width: 70vw;
     border-radius: 10px;
 }
 
@@ -76,7 +87,33 @@
     }
 }
 
-/* ÁREA PALADÍN */
+/* BUTTON START */
+
+.btn-start-box {
+    /* background-color: aliceblue; */
+}
+
+.startbtn {
+    position: absolute;
+    transform: translate3d(-50%, -30%, 0);
+    z-index: 3;
+    font-family: "";
+    font-size: medium;
+    width: 130px;
+    background-color: rgba(240, 248, 255, 0);
+    border: 0px solid;
+}
+
+.pentaicon {
+    height: 50px;
+}
+
+.startbtn:hover {
+    background-color: rgba(240, 248, 255, 0.274);
+    box-shadow: -5px -5px 20px rgb(197, 50, 5), 5px 5px 20px rgb(197, 50, 5), -5px -5px 20px rgb(197, 50, 5) inset, 5px 5px 20px rgb(197, 50, 5) inset;
+}
+
+/* PALADIN AREA */
 
 .col-right {
     /* background-color: aqua; */
@@ -90,6 +127,8 @@
     bottom: 0vh;
     z-index: 1;
 }
+
+/* MEDIA QUERYS */
 
 @media (min-width: 768px) {
 
@@ -119,6 +158,21 @@
         bottom: 0vh;
     }
 
+    .title {
+        font-size: 40px;
+    }
+    
+    .textbox {
+        background-color: rgba(168, 168, 168, 0.37);
+        height: 40vh;
+        width: 50vw;
+        border-radius: 10px;
+    }
+
+    .spacebox {
+        height: 15vh;
+    }
+
 }
 
 @media (min-width: 992px) {
@@ -137,6 +191,10 @@
         bottom: 0vh;
     }
 
+    .title {
+        font-size: 60px;
+    }
+
 }
 
 @media (min-width: 1400px) {
@@ -144,7 +202,7 @@
     .devilimg {
         position: absolute;
         height: 70vh;
-        left: 11vw;
+        left: 9vw;
         bottom: 0vh;
     }
 
@@ -155,4 +213,23 @@
         bottom: 0vh;
     }
 
+    .title {
+        font-size: 85px;
+    }
 }
+
+/* FONTS */
+
+@font-face {
+    font-family: 'blackdemon';
+    src: url(../fonts/Black\ Demon.ttf) format('truetype');
+    font-style: normal;
+    font-weight: bolder;
+  }
+
+  @font-face {
+    font-family: 'mephisto';
+    src: url(../fonts/Fiolex_Mephisto_Dingbats.ttf) format('truetype');
+    font-style: normal;
+    font-weight: bolder;
+  }
