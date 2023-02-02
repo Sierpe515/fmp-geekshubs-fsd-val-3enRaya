@@ -1,0 +1,158 @@
+.bigbox {
+    background-color: black;
+    height: 100vh;
+    background-image: url(../img/thumb-1920-74381.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ÁREA DIABLO */
+
+.col-left {
+    /* background-color: red; */
+    height: 50vh;
+}
+
+.devilimg {
+    position: absolute;
+    height: 60vh;
+    left: 0vw;
+    bottom: 0vh;
+    z-index: 2;
+}
+
+/* ÁREA CENTRAL */
+
+.col-center {
+    /* background-color: grey; */
+    height: 50vh;
+}
+
+.textbox {
+    background-color: aliceblue;
+    height: 40vh;
+    width: 50vw;
+    border-radius: 10px;
+}
+
+.scrolltext {
+    text-align: center;
+    height: 80%;
+    overflow: hidden;
+  
+  /* animation properties */
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    
+    -moz-animation: my-animation 20s linear infinite;
+    -webkit-animation: my-animation 20s linear infinite;
+    animation: my-animation 20s linear infinite;
+}
+
+@-moz-keyframes my-animation {
+    from { -moz-transform: translateY(100%); }
+    to { -moz-transform: translateY(-100%); }
+}
+  
+  /* for Chrome */
+@-webkit-keyframes my-animation {
+    from { -webkit-transform: translateY(100%); }
+    to { -webkit-transform: translateY(-100%); }
+}
+  
+@keyframes my-animation {
+    from {
+      -moz-transform: translateY(100%);
+      -webkit-transform: translateY(100%);
+      transform: translateY(100%);
+    }
+    to {
+      -moz-transform: translateY(-100%);
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+    }
+}
+
+/* ÁREA PALADÍN */
+
+.col-right {
+    /* background-color: aqua; */
+    height: 50vh;
+}
+
+.palaimg {
+    position: absolute;
+    height: 60vh;
+    right: 0vw;
+    bottom: 0vh;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+
+    .col-left {
+        height: 100vh;
+    }
+    
+    .col-center {
+        height: 100vh;
+    }
+    
+    .col-right {
+        height: 100vh;
+    }
+
+    .devilimg {
+        position: absolute;
+        height: 70vh;
+        left: 0vw;
+        bottom: 0vh;
+    }
+
+    .palaimg {
+        position: absolute;
+        height: 70vh;
+        right: 0vw;
+        bottom: 0vh;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    .devilimg {
+        position: absolute;
+        height: 70vh;
+        left: 5vw;
+        bottom: 0vh;
+    }
+
+    .palaimg {
+        position: absolute;
+        height: 70vh;
+        right: 3vw;
+        bottom: 0vh;
+    }
+
+}
+
+@media (min-width: 1400px) {
+
+    .devilimg {
+        position: absolute;
+        height: 70vh;
+        left: 11vw;
+        bottom: 0vh;
+    }
+
+    .palaimg {
+        position: absolute;
+        height: 70vh;
+        right: 5vw;
+        bottom: 0vh;
+    }
+
+}
