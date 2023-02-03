@@ -1,0 +1,224 @@
+.bigbox {
+    background-color: black;
+    height: 100vh;
+    background-image: url(../img/thumb-1920-74381.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* DEVIL AREA  */
+
+.col-left {
+    background-color: red;
+    height: 50vh;
+}
+
+.frameworkdevil {
+    background-color: orange;
+}
+
+.hellsquare {
+    height: 30vh;
+}
+
+.devilimg {
+    display: none;
+}
+
+/* CENTER AREA */
+
+.col-center {
+    background-color: grey;
+    height: 50vh;
+}
+
+.boardttt {
+    background-color: aliceblue;
+    height: 240px;
+    width: 240px;
+}
+
+.boardcell {
+    height: 80px;
+    width: 80px;
+}
+
+.boardgif {
+    height: 13vh;
+}
+
+/* PALADIN AREA */
+
+.col-right {
+    background-color: blue;
+    height: 50vh;
+}
+
+.frameworkpala {
+    background-color: aqua;
+}
+
+.heavensquare {
+    height: 30vh;
+}
+
+/* MEDIA QUERYS */
+
+@media (min-width: 576px) {
+
+    .boardttt {
+    background-color: aliceblue;
+    height: 300px;
+    width: 300px;
+    }
+
+    .boardcell {
+    height: 100px;
+    width: 100px;
+    }
+
+    .boardgif {
+    height: 14vh;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .boardttt {
+    background-color: aliceblue;
+    height: 300px;
+    width: 300px;
+    }
+
+    .boardcell {
+    height: 100px;
+    width: 100px;
+    }
+
+    .boardgif {
+    height: 14vh;
+    }
+
+    .heavensquare {
+    height: 40vh;
+    }
+
+    .hellsquare {
+    height: 40vh;
+    }
+
+    /* .devilimg {
+        position: absolute;
+        height: 70vh;
+        left: 0vw;
+        bottom: 0vh;
+    }
+
+    .palaimg {
+        position: absolute;
+        height: 70vh;
+        right: 0vw;
+        bottom: 0vh;
+    } */
+
+    .title {
+        font-size: 40px;
+    }
+
+
+    .spacebox {
+        height: 15vh;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    /* .devilimg {
+        position: absolute;
+        height: 70vh;
+        left: 5vw;
+        bottom: 0vh;
+    }
+
+    .palaimg {
+        position: absolute;
+        height: 70vh;
+        right: 3vw;
+        bottom: 0vh;
+    } */
+
+    .title {
+        font-size: 60px;
+    }
+
+    .col-left {
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .devilimg {
+    display: block;
+    }
+
+    .devilimg1 {
+        height: 50vh;
+    }
+    
+    .col-center {
+        height: 100vh;
+    }
+    
+    .col-right {
+        height: 100vh;
+    }
+
+    .heavensquare {
+    height: 30vh;
+    }
+
+    .hellsquare {
+    height: 30vh;
+    }
+
+}
+
+@media (min-width: 1400px) {
+
+    /* .devilimg {
+        position: absolute;
+        height: 70vh;
+        left: 9vw;
+        bottom: 0vh;
+    }
+
+    .palaimg {
+        position: absolute;
+        height: 70vh;
+        right: 5vw;
+        bottom: 0vh;
+    } */
+
+    .title {
+        font-size: 85px;
+    }
+}
+
+/* FONTS */
+
+@font-face {
+    font-family: 'blackdemon';
+    src: url(../fonts/Black\ Demon.ttf) format('truetype');
+    font-style: normal;
+    font-weight: bolder;
+  }
+
+  @font-face {
+    font-family: 'mephisto';
+    src: url(../fonts/Fiolex_Mephisto_Dingbats.ttf) format('truetype');
+    font-style: normal;
+    font-weight: bolder;
+  }
