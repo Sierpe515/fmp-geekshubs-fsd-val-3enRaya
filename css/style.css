@@ -46,12 +46,13 @@
     height: 30vh;
     width: 70vw;
     border-radius: 10px;
+    overflow: hidden;
+
 }
 
 .scrolltext {
     text-align: center;
-    height: 80%;
-    overflow: hidden;
+    height: 100%;
   
   /* animation properties */
     -moz-transform: translateY(100%);
