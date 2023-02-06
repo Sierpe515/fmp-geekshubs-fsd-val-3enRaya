@@ -14,10 +14,6 @@
 
 /* DEVIL AREA  */
 
-.frameworkdevil {
-    /* background-color: orange; */
-}
-
 .hellsquare {
     height: 30vh;
 }
@@ -42,6 +38,8 @@
     height: 240px;
     width: 240px;
     border-radius: 10px;
+    padding-left: 2vw;
+    padding-right: 2vw;
 }
 
 .boardcell {
@@ -95,10 +93,6 @@
 
 /* PALADIN AREA */
 
-.frameworkpala {
-    /* background-color: aqua; */
-}
-
 .heavensquare {
     height: 30vh;
 }
@@ -114,6 +108,8 @@
     .boardttt {
     height: 300px;
     width: 300px;
+    padding-left: 0.64vw;
+    padding-right: 0.64vw;
     }
 
     .boardcell {
@@ -232,11 +228,12 @@
 
     .heavensquare {
         height: 40vh;
-        }
+    }
     
-        .hellsquare {
+    .hellsquare {
         height: 40vh;
-        }
+    }
+
 }
 
 /* FONTS */
