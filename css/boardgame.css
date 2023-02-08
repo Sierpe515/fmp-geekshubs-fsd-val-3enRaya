@@ -29,62 +29,39 @@
     font-size: xx-large;
     text-shadow: 2px 0 rgb(197, 50, 5), -2px 0 rgb(197, 50, 5), 0 2px rgb(197, 50, 5), 0 -2px rgb(197, 50, 5),
                1px 1px rgb(197, 50, 5), -1px -1px rgb(197, 50, 5), 1px -1px rgb(197, 50, 5), -1px 1px rgb(197, 50, 5);
+    margin-bottom: 0.25em;
 }
 
 /* Boardgame */
 
 .boardttt {
     background-color: rgba(240, 248, 255, 0.466);
-    height: 240px;
-    width: 240px;
+    height: 15em;
+    width: 15em;
     border-radius: 10px;
-    padding-left: 2vw;
-    padding-right: 2vw;
+    /* padding-left: 2vw;
+    padding-right: 2vw; */
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+.underboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .boardcell {
-    height: 80px;
-    width: 80px;
+    height: 5em;
+    width: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
 }
 
 .boardgif {
-    height: 13vh;
-}
-
-.cel1a {
-    position: absolute;
-}
-
-.cel1b {
-    position: absolute;
-}
-
-.cel1c {
-    position: absolute;
-}
-
-.cel2a {
-    position: absolute;
-}
-
-.cel2b {
-    position: absolute;
-}
-
-.cel2c {
-    position: absolute;
-}
-
-.cel3a {
-    position: absolute;
-}
-
-.cel3b {
-    position: absolute;
-}
-
-.cel3c {
-    position: absolute;
+    height: 5em;
 }
 
 .spacebox {
@@ -106,19 +83,18 @@
 @media (min-width: 576px) {
 
     .boardttt {
-    height: 300px;
-    width: 300px;
-    padding-left: 0.64vw;
-    padding-right: 0.64vw;
+    height: 21em;
+    width: 21em;
     }
 
     .boardcell {
-    height: 100px;
-    width: 100px;
+    height: 7em;
+    width: 7em;
     }
 
     .boardgif {
-    height: 14vh;
+    height: 7em;
+    
     }
 
 }
@@ -180,17 +156,20 @@
     }
 
     .boardttt {
-        height: 390px;
-        width: 390px;
+        height: 30em;
+        width: 30em;
         }
     
     .boardcell {
-        height: 130px;
-        width: 130px;
+        height: 10em;
+        width: 10em;
+        z-index: 10;
     }
 
     .boardgif {
-        height: 18vh;
+        position: absolute;
+        z-index: 9;
+        height: 10em;
     }
 
     .spacebox {
