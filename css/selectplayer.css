@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    font-family: "Seagram";
+    font-size: large;
+    color: white;
+    text-shadow: 4px 4px 5px black, -4px -4px 5px black;
+}
+
+input {
+    font-family: "Seagram";
+    text-align: center;
+    border-radius: 5px;
+    height: 2em;
+    width: 16em;
+    background-color: rgba(170, 171, 172, 0.418);
+}
+
+input::placeholder {
+    color: white;
+}
+
+.bigcontainer {
+    background-color: black;
+    height: 100vh;
+    background-image: url(../img/mobile\ bg\ select\ player.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* P1 AREA */
+
+.colp1 {
+    height: 45vh;
+    display: flex;
+}
+
+.p1token {
+    height: 45vh;
+    width: 50vw;
+    /* background-color: blue; */
+}
+
+.p1gif {
+    height: 45vh;
+    width: 50vw;
+    /* background-color: bisque; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.selectgif {
+    height: 15em;
+    width: 15em;
+    border: 2px solid black;
+}
+
+/* BUTTON SELECT AREA */
+
+.colselect {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectbtn {
+    background-color: black;
+    height: 4em;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px; 
+    font-family: "seagram";
+    color: white;
+    cursor: pointer;
+}
+
+.selectbtn:hover {
+    transform: scale(1.1);
+    box-shadow: 10px 10px 40px darkred, -10px -10px 40px darkred;
+}
+
+.pentagramgif {
+    height: 4em;
+}
+
+/* P2 AREA */
+
+.colp2 {
+    height: 45vh;
+    display: flex;
+}
+
+.p2input {
+    background-color: rgba(235, 99, 46, 0.418);
+}
+
+.p2gif {
+    height: 45vh;
+    width: 50vw;
+    /* background-color: darkred; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.p2token {
+    height: 45vh;
+    width: 50vw;
+    /* background-color: orange; */
+}
+
+@media (min-width: 992px) {
+
+    input {
+        height: 3em;
+        width: 12em;
+        font-size: large;
+    }
+
+    .bigcontainer {
+        display: flex;
+        background-image: url(../img/diablo-4-video-game-art-blizzard-entertainment-hd-wallpaper-b55a9b00dc372862168bad0cacd395af.jpg);
+    }
+    
+    .colp1 {
+        height: 100vh;
+        width: 45vw;
+    }
+
+    .p1gif {
+        height: 100vh;
+        justify-content: center;
+        gap: 3em;
+        order: 1;
+    }
+
+    .p1token {
+        height: 100vh;
+        order: 2;
+    }
+    
+    .colselect {
+        height: 100vh;
+        width: 10vw;
+    }
+    
+    .colp2 {
+        height: 100vh;
+        width: 45vw;
+    }
+
+    .p2gif {
+        height: 100vh;
+        justify-content: center;
+        gap: 3em;
+        order: 1;
+    }
+
+    .p1token {
+        height: 100vh;
+        order: 2;
+    }
+
+
+}
+
+
+/* FONTS */
+
+@font-face {
+    font-family: 'blackdemon';
+    src: url(../fonts/Black\ Demon.ttf) format('truetype');
+    font-style: normal;
+    font-weight: bolder;
+}
+
+@font-face {
+    font-family: 'mephisto';
+    src: url(../fonts/Fiolex_Mephisto_Dingbats.ttf) format('truetype');
+    font-style: normal;
+    font-weight: bolder;
+}
+
+@font-face {
+    font-family: 'seagram';
+    src: url(../fonts/Seagram\ tfb.ttf) format('truetype');
+    font-style: normal;
+    font-weight: bolder;
+}

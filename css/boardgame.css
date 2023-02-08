@@ -58,6 +58,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
+    cursor: pointer;
 }
 
 .boardgif {

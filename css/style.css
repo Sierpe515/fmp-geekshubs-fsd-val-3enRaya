@@ -114,6 +114,10 @@
     background-color: rgba(240, 248, 255, 0.274);
     box-shadow: -5px -5px 20px rgb(197, 50, 5), 5px 5px 20px rgb(197, 50, 5), -5px -5px 20px rgb(197, 50, 5) inset, 5px 5px 20px rgb(197, 50, 5) inset;
 }
+/* 
+.startbtn:active {
+    background-color: darkred !important;
+} */
 
 /* PALADIN AREA */
 
