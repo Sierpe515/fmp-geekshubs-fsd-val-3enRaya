@@ -5,6 +5,7 @@ let turno = true;
 let fichaP1 = 3;
 let fichaP2 = 3;
 
+let fichaBorrada = false;
 
 let miTablero = ["","","","","","","","",""];
 
@@ -74,19 +75,25 @@ tablero.map(
 
                 comprueboGanador();
 
+                fichaBorrada = false
+
                 turno = !turno;
 
-            } else if ((celda.innerHTML !=="") && (fichaP1 || fichaP2 === 0)){
+            } else if ((celda.innerHTML !=="") && (fichaP1 || fichaP2 === 0) && fichaBorrada === false){
 
                 if (celda.innerHTML === "X" && turno == true){
 
                     celda.innerHTML = "";
+
+                    fichaBorrada = true;
 
                     fichaP1++;
                         
                 } else if (celda.innerHTML === "O" && turno == false){
 
                     celda.innerHTML = "";
+
+                    fichaBorrada = true;
 
                     fichaP2++;
 
