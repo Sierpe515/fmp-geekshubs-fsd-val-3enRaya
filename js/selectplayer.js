@@ -1,28 +1,20 @@
-//CAPTURO LOS INPUT
-let playerInputs = {
-    player1 : '',
-    player2 : ''
-}
+
+let inputsCapturados = Array.from(document.getElementsByClassName("namePLayer"));
 
 let button = document.getElementById("button");
 
-let inputsCapturados = Array.from(document.getElementsByTagName("input"));
-// const GuardarDatos = () => {
-//     //Ejemplo de guardado de datos en SessionStorage
-//     sessionStorage.setItem("datosUsuarios", JSON.stringify(playerInputs));
-// }
-// const LeerDatos = () => {
-//     //Ejemplo de lectura de datos en SessionStorage
-//     let datosDeSesion = JSON.parse(sessionStorage.getItem("datosUsuarios"));
-//     console.log(datosDeSesion);
-// }
+let playerInputs = {
+        player1 : '',
+        player2 : ''
+    }
+
 inputsCapturados.map(
     (inputSeleccionado) => {
         inputSeleccionado.addEventListener("input", ()=> {
-            
+                    
             for(let inputText in playerInputs){
                 if(inputSeleccionado.name === inputText){
-                    playerInputs[inputText] = inputSeleccionado.value;
+                playerInputs[inputText] = inputSeleccionado.value;
                 }
             }
         })
@@ -31,9 +23,16 @@ inputsCapturados.map(
 
 button.addEventListener("click", ()=>{
 
+    console.log ("hola")
+
+    if( (playerInputs.player1 === "") || (playerInputs.player2 === "")){
+        return;
+    }
+
     console.log(playerInputs);
     
     sessionStorage.setItem("usuario", JSON.stringify(playerInputs));
 
     window.open("../pages/boardgame.html","_self")
+
 })
