@@ -34,4 +34,6 @@ button.addEventListener("click", ()=>{
     console.log(playerInputs);
     
     sessionStorage.setItem("usuario", JSON.stringify(playerInputs));
+
+    window.open("../pages/boardgame.html","_self")
 })

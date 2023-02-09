@@ -15,7 +15,7 @@ input {
     text-align: center;
     border-radius: 5px;
     height: 2em;
-    width: 16em;
+    width: 10em;
     background-color: rgba(170, 171, 172, 0.418);
 }
 
@@ -57,8 +57,8 @@ input::placeholder {
 }
 
 .selectgif {
-    height: 15em;
-    width: 15em;
+    height: 10em;
+    width: 10em;
     border: 2px solid black;
 }
 
@@ -118,6 +118,20 @@ input::placeholder {
     height: 45vh;
     width: 50vw;
     /* background-color: orange; */
+}
+
+@media (min-width: 576px) {
+
+    .selectgif {
+        height: 15em;
+        width: 15em;
+    }
+
+    input {
+        height: 2em;
+        width: 16em;
+    }
+
 }
 
 @media (min-width: 992px) {
