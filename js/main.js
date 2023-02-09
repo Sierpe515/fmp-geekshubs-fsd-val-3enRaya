@@ -7,6 +7,10 @@ let fichaP2 = 3;
 
 let fichaBorrada = false;
 
+// let casillaInhabilitada = false;
+
+// let fichaQuitada;
+
 let miTablero = ["","","","","","","","",""];
 
 let juegoTerminado = false;
@@ -53,6 +57,13 @@ const comprueboGanador = () => {
 
 }
 
+// const inhabilitarCasilla = (casillaInhabilitada) => {
+//     if (!fichaQuitada) { 
+//         fichaQuitada = diccionario[casillaInhabilitada];
+//         document.getElementById(casillaInhabilitada).onclick = null;
+//     }
+// }
+
 tablero.map(
     (celda) => {
         celda.addEventListener('click', ()=> {
@@ -85,6 +96,12 @@ tablero.map(
 
                     celda.innerHTML = "";
 
+                    // celda.innerHTML = null;
+                    
+                    // casillaInhabilitada = true;
+
+                    // inhabilitarCasilla();
+
                     fichaBorrada = true;
 
                     fichaP1++;
@@ -104,3 +121,14 @@ tablero.map(
         })
     }
 )
+
+let fichasPlayers = document.getElementById("fichasp1");
+fichasPlayers.innerHTML = `Fichas: ${fichaP1}`;
+
+fichasPlayers = document.getElementById("fichasp2");
+fichasPlayers.innerHTML = `Fichas: ${fichaP2}`;
+
+// let turnoPlayers = document.getElementById("marcadorTurnoP1");
+// if (turno == true){
+//     turnoPlayers.innerHTML = "Your Turn"
+// }

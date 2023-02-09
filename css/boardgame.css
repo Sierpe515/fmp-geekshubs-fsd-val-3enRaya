@@ -15,7 +15,16 @@
 /* DEVIL AREA  */
 
 .frameworkdevil {
+    color: black;
+    text-shadow: 2px 0 rgb(197, 50, 5), -2px 0 rgb(197, 50, 5), 0 2px rgb(197, 50, 5), 0 -2px rgb(197, 50, 5),
+               1px 1px rgb(197, 50, 5), -1px -1px rgb(197, 50, 5), 1px -1px rgb(197, 50, 5), -1px 1px rgb(197, 50, 5);
+}
+
+#player1 {
+    font-size: xxx-large;
     color: rgb(197, 50, 5);
+    text-shadow: 4px 0 black, -4px 0 black, 0 4px black, 0 -4px black,
+               1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
 }
 
 .hellsquare {
@@ -78,21 +87,28 @@
 
 .framework {
     position: relative;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     height: 30vh;
     width: 30vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
-               1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
     font-size: xx-large;
     font-family: "Seagram";
 }
 
 .frameworkpala {
+    color: black;
+    text-shadow: 2px 0 aqua, -2px 0 aqua, 0 2px aqua, 0 -2px aqua,
+               1px 1px aqua, -1px -1px aqua, 1px -1px aqua, -1px 1px aqua;
+}
+
+#player2 {
+    font-size: xxx-large;
     color: aqua;
-    
+    text-shadow: 4px 0 black, -4px 0 black, 0 4px black, 0 -4px black,
+               1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
 }
 
 .heavensquare {
