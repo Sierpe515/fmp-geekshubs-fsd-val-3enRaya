@@ -9,6 +9,14 @@ const chooseToken = (tokenChosen) => {
             document.getElementById(tokenChosen).onclick = null;
 
             console.log(tokenP1)
+
+            //Aqui deshabilitaremos los token del player1
+
+            let fichas = Array.from(document.getElementsByClassName("p1SelectTokens"));
+
+            fichas.map(
+                ficha => ficha.onclick = null
+            )
             
     } else {
 

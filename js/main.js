@@ -82,6 +82,8 @@ tablero.map(
 
                 (turno) ? fichaP1-- : fichaP2--;
 
+                (turno) ? fichasPlayer1.innerHTML = `Fichas: ${fichaP1}` : fichasPlayer2.innerHTML = `Fichas: ${fichaP2}`;
+
                 miTablero[celda.id] = (turno) ? "X" : "O";
 
                 comprueboGanador();
@@ -96,6 +98,8 @@ tablero.map(
 
                     celda.innerHTML = "";
 
+
+
                     // celda.innerHTML = null;
                     
                     // casillaInhabilitada = true;
@@ -105,6 +109,8 @@ tablero.map(
                     fichaBorrada = true;
 
                     fichaP1++;
+
+                    fichasPlayer1.innerHTML = `Fichas: ${fichaP1}`
                         
                 } else if (celda.innerHTML === "O" && turno == false){
 
@@ -114,6 +120,8 @@ tablero.map(
 
                     fichaP2++;
 
+                    fichasPlayer2.innerHTML = `Fichas: ${fichaP2}`
+
                     }
 
                 miTablero[celda.id] = "";
@@ -122,11 +130,11 @@ tablero.map(
     }
 )
 
-let fichasPlayers = document.getElementById("fichasp1");
-fichasPlayers.innerHTML = `Fichas: ${fichaP1}`;
+let fichasPlayer1 = document.getElementById("fichasp1");
+fichasPlayer1.innerHTML = `Fichas: ${fichaP1}`;
 
-fichasPlayers = document.getElementById("fichasp2");
-fichasPlayers.innerHTML = `Fichas: ${fichaP2}`;
+let fichasPlayer2 = document.getElementById("fichasp2");
+fichasPlayer2.innerHTML = `Fichas: ${fichaP2}`;
 
 // let turnoPlayers = document.getElementById("marcadorTurnoP1");
 // if (turno == true){
