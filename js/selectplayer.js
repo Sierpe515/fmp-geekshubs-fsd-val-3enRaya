@@ -1,5 +1,5 @@
 
-let inputsCapturados = Array.from(document.getElementsByClassName("namePLayer"));
+let inputsCapturados = Array.from(document.getElementsByClassName("namePlayer"));
 
 let button = document.getElementById("button");
 
@@ -22,8 +22,6 @@ inputsCapturados.map(
 )
 
 button.addEventListener("click", ()=>{
-
-    console.log ("hola")
 
     if( (playerInputs.player1 === "") || (playerInputs.player2 === "")){
         return;

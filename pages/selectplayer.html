@@ -18,7 +18,11 @@
             </div>
             <div class="p1gif">
                 <p class="nameTitle">Paladin</p>
-                <input id="player2" class="namePLayer" name="player2" type="text" maxlength="10" placeholder="Introduce tu nombre">
+                <input id="player2" class="namePlayer" name="player2" type="text" maxlength="10" placeholder="Introduce tu nombre">
+                <div class="typePlayerBox">
+                    <div class="playerType typeBtn">Player</div>
+                    <div class="cpuType typeBtn">CPU</div>
+                </div>
                 <img class="selectgif" src="../img/MfdI.gif" alt="palagif">
             </div>
         </div>
@@ -30,14 +34,18 @@
         <div class="colp2">
             <div class="p2gif">
                 <p class="nameTitle">Devil</p>
-                <input id="player1" class="namePLayer" name="player1" type="text" maxlength="10" placeholder="Introduce tu nombre">
+                <input id="player1" class="namePlayer" name="player1" type="text" maxlength="10" placeholder="Introduce tu nombre">
+                <div class="typePlayerBox">
+                    <div class="playerType typeBtn">Player</div>
+                    <div class="cpuType typeBtn">CPU</div>
+                </div>
                 <img class="selectgif" src="../img/WHfW.gif" alt="devilgif">
             </div>
             <div class="p2token">
                 <div class="p2SelectTokens p2SelectTokensTitle">Choose your token:</div>
-                <div class="p2SelectTokens"><p onclick="chooseToken('token1P2')" id="token1P2" class="tokenP">a</p></div>
-                <div class="p2SelectTokens"><p onclick="chooseToken('token2P2')" id="token2P2" class="tokenP">c</p></div>
-                <div class="p2SelectTokens"><p onclick="chooseToken('token3P2')" id="token3P2" class="tokenP">n</p></div>
+                <div class="p2SelectTokens" onclick="chooseToken('token1P2')"><p id="token1P2" class="tokenP">a</p></div>
+                <div class="p2SelectTokens" onclick="chooseToken('token2P2')"><p id="token2P2" class="tokenP">c</p></div>
+                <div class="p2SelectTokens" onclick="chooseToken('token3P2')"><p id="token3P2" class="tokenP">K</p></div>
             </div>
         </div>
     </div>

@@ -21,10 +21,11 @@
 }
 
 #player1 {
-    font-size: xxx-large;
+    font-size: x-large;
     color: rgb(197, 50, 5);
     text-shadow: 4px 0 black, -4px 0 black, 0 4px black, 0 -4px black,
                1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+    margin-bottom: 0.5em;
 }
 
 .hellsquare {
@@ -63,6 +64,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "blackdemon";
 }
 
 .boardcell {
@@ -73,6 +75,7 @@
     align-items: center;
     position: absolute;
     cursor: pointer;
+    /* font-size: 3em; */
 }
 
 .boardgif {
@@ -94,8 +97,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: xx-large;
+    font-size: medium;
     font-family: "Seagram";
+}
+
+#marcadorTurnoP1 {
+    margin-bottom: 0.25em;
+}
+
+#fichasp1 {
+    margin-bottom: 0.25em;
 }
 
 .frameworkpala {
@@ -105,10 +116,19 @@
 }
 
 #player2 {
-    font-size: xxx-large;
+    font-size: x-large;
     color: aqua;
     text-shadow: 4px 0 black, -4px 0 black, 0 4px black, 0 -4px black,
                1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+    margin-bottom: 0.5em;
+}
+
+#marcadorTurnoP2 {
+    margin-bottom: 0.25em;
+}
+
+#fichasp2 {
+    margin-bottom: 0.25em;
 }
 
 .heavensquare {
@@ -136,7 +156,18 @@
 
     .boardgif {
     height: 7em;
-    
+    }
+
+    .framework {
+        font-size: large;
+    }
+
+    #player1 {
+        font-size: xxx-large;
+    }
+
+    #player2 {
+        font-size: xxx-large;
     }
 
 }
@@ -163,6 +194,10 @@
     
     .title {
         font-size: 50px;
+    }
+
+    .framework {
+        font-size: xx-large;
     }
 
 }
@@ -249,7 +284,11 @@
 
     .heavensquare {
             height: 30vh;
-        }
+    }
+
+    .framework {
+        font-size: large;
+    }
 
 }
 
@@ -283,6 +322,18 @@
 
     .heavensquare {
         height: 40vh;
+    }
+
+    #player1 {
+        font-size: xxx-large;
+    }
+
+    #player2 {
+        font-size: xxx-large;
+    }
+
+    .framework {
+        font-size: xx-large;
     }
 
 }

@@ -1,6 +1,8 @@
 let tablero = Array.from(document.getElementsByClassName("boardcell"));
 
 let turno = true;
+let contadorTurnosP1 = 0;
+let contadorTurnosP2 = 0;
 
 let fichaP1 = 3;
 let fichaP2 = 3;
@@ -24,7 +26,35 @@ let combinacionGanadora = [
     [2, 5, 8],
     [0, 4, 8],
     [2, 4, 6],
-  ];
+];
+
+const marcadorTurno = () => {
+
+    if (turno == true) {
+        turnoPlayer1.innerHTML = "";
+        turnoPlayer2.innerHTML = "Your turn";
+    } else if (turno == false) {
+        turnoPlayer1.innerHTML = "Your turn";
+        turnoPlayer2.innerHTML = ""
+    };
+
+}
+
+const contadorTurnos = () => {
+
+    if (turno){
+        contadorTurnosP1++
+        console.log(contadorTurnosP1)
+        contadTurnosP1.innerHTML = `Turnos: ${contadorTurnosP1}`
+        sessionStorage.setItem("turnosP1", contadorTurnosP1);
+    } else {
+        contadorTurnosP2++
+        console.log(contadorTurnosP2)
+        contadTurnosP2.innerHTML = `Turnos: ${contadorTurnosP2}`
+        sessionStorage.setItem("turnosP2", contadorTurnosP2);
+    }
+
+}
 
 const comprueboGanador = () => {
     console.log(miTablero);
@@ -32,27 +62,147 @@ const comprueboGanador = () => {
     if (miTablero[0] === miTablero[1] && miTablero [0] === miTablero [2] && miTablero[0] !== ""){
         console.log("Has ganado!");
         juegoTerminado = true;
+
+        if (miTablero[0] === "X"){
+            console.log("Ha ganado X");
+            sessionStorage.setItem("winner", "X");
+            setTimeout(()=>{
+                window.open("../pages/winnerpage.html","_self")
+            },1000); 
+        } else if (miTablero[0] === "O"){
+            console.log("Ha ganado O");
+            sessionStorage.setItem("winner", "O");
+            setTimeout(()=>{
+                window.open("../pages/winnerpage.html","_self")
+            },1000);
+        }
+        
     } else if (miTablero[3] === miTablero[4] && miTablero [3] === miTablero [5] && miTablero[3]){
         console.log("Has ganado!");
         juegoTerminado = true;
+
+        if (miTablero[3] === "X"){
+            console.log("Ha ganado X");
+            sessionStorage.setItem("winner", "X");
+            setTimeout(()=>{
+                window.open("../pages/winnerpage.html","_self")
+            },1000); 
+        } else if (miTablero[3] === "O"){
+            console.log("Ha ganado O");
+            sessionStorage.setItem("winner", "O");
+            setTimeout(()=>{
+                window.open("../pages/winnerpage.html","_self")
+            },1000);
+        }
+
     } else if (miTablero[6] === miTablero[7] && miTablero [6] === miTablero [8] && miTablero[6]){
         console.log("Has ganado!");
         juegoTerminado = true;
+
+        if (miTablero[6] === "X"){
+            console.log("Ha ganado X");
+            sessionStorage.setItem("winner", "X");
+            setTimeout(()=>{
+                window.open("../pages/winnerpage.html","_self")
+            },1000); 
+        } else if (miTablero[6] === "O"){
+            console.log("Ha ganado O");
+            sessionStorage.setItem("winner", "O");
+            setTimeout(()=>{
+                window.open("../pages/winnerpage.html","_self")
+            },1000);
+        }
+
     } else if (miTablero[0] === miTablero[3] && miTablero [0] === miTablero [6] && miTablero[0]){
         console.log("Has ganado!");
         juegoTerminado = true;
+
+        if (miTablero[0] === "X"){
+            console.log("Ha ganado X");
+            sessionStorage.setItem("winner", "X");
+            setTimeout(()=>{
+                window.open("../pages/winnerpage.html","_self")
+            },1000); 
+        } else if (miTablero[0] === "O"){
+            console.log("Ha ganado O");
+            sessionStorage.setItem("winner", "O");
+            setTimeout(()=>{
+                window.open("../pages/winnerpage.html","_self")
+            },1000);
+        }
+
     } else if (miTablero[1] === miTablero[4] && miTablero [1] === miTablero [7] && miTablero[1]){
         console.log("Has ganado!");
         juegoTerminado = true;
+
+        if (miTablero[1] === "X"){
+            console.log("Ha ganado X");
+            sessionStorage.setItem("winner", "X");
+            setTimeout(()=>{
+                window.open("../pages/winnerpage.html","_self")
+            },1000); 
+        } else if (miTablero[1] === "O"){
+            console.log("Ha ganado O");
+            sessionStorage.setItem("winner", "O");
+            setTimeout(()=>{
+                window.open("../pages/winnerpage.html","_self")
+            },1000);
+        }
+
     } else if (miTablero[2] === miTablero[5] && miTablero [2] === miTablero [8] && miTablero[2]){
         console.log("Has ganado!");
         juegoTerminado = true;
+
+        if (miTablero[2] === "X"){
+            console.log("Ha ganado X");
+            sessionStorage.setItem("winner", "X");
+            setTimeout(()=>{
+                window.open("../pages/winnerpage.html","_self")
+            },1000); 
+        } else if (miTablero[2] === "O"){
+            console.log("Ha ganado O");
+            sessionStorage.setItem("winner", "O");
+            setTimeout(()=>{
+                window.open("../pages/winnerpage.html","_self")
+            },1000);
+        }
+
     } else if (miTablero[0] === miTablero[4] && miTablero [0] === miTablero [8] && miTablero[0]){
         console.log("Has ganado!");
         juegoTerminado = true;
+
+        if (miTablero[0] === "X"){
+            console.log("Ha ganado X");
+            sessionStorage.setItem("winner", "X");
+            setTimeout(()=>{
+                window.open("../pages/winnerpage.html","_self")
+            },1000); 
+        } else if (miTablero[0] === "O"){
+            console.log("Ha ganado O");
+            sessionStorage.setItem("winner", "O");
+            setTimeout(()=>{
+                window.open("../pages/winnerpage.html","_self")
+            },1000);
+        }
+
     } else if (miTablero[2] === miTablero[4] && miTablero [2] === miTablero [6] && miTablero[2]){
         console.log("Has ganado!");
         juegoTerminado = true;
+
+        if (miTablero[2] === "X"){
+            console.log("Ha ganado X");
+            sessionStorage.setItem("winner", "X");
+            setTimeout(()=>{
+                window.open("../pages/winnerpage.html","_self")
+            },1000); 
+        } else if (miTablero[2] === "O"){
+            console.log("Ha ganado O");
+            sessionStorage.setItem("winner", "O");
+            setTimeout(()=>{
+                window.open("../pages/winnerpage.html","_self")
+            },1000);
+        }
+
     };
 
 }
@@ -78,6 +228,8 @@ tablero.map(
 
             if((celda.innerHTML === "") && (fichaP1 || fichaP2 > 0)){
 
+                marcadorTurno();
+
                 celda.innerHTML = (turno) ? "X" : "O";
 
                 (turno) ? fichaP1-- : fichaP2--;
@@ -89,6 +241,8 @@ tablero.map(
                 comprueboGanador();
 
                 fichaBorrada = false
+
+                contadorTurnos();
 
                 turno = !turno;
 
@@ -136,7 +290,12 @@ fichasPlayer1.innerHTML = `Fichas: ${fichaP1}`;
 let fichasPlayer2 = document.getElementById("fichasp2");
 fichasPlayer2.innerHTML = `Fichas: ${fichaP2}`;
 
-// let turnoPlayers = document.getElementById("marcadorTurnoP1");
-// if (turno == true){
-//     turnoPlayers.innerHTML = "Your Turn"
-// }
+let turnoPlayer1 = document.getElementById("marcadorTurnoP1");
+
+let turnoPlayer2 = document.getElementById("marcadorTurnoP2");
+
+let contadTurnosP1 = document.getElementById("turnosP1");
+contadTurnosP1.innerHTML = `Turnos: ${contadorTurnosP1}`
+
+let contadTurnosP2 = document.getElementById("turnosP2");
+contadTurnosP2.innerHTML = `Turnos: ${contadorTurnosP2}`

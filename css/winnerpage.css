@@ -1,0 +1,84 @@
+body {
+    /* background-color: aquamarine; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.row {
+    height: 100vh;
+    gap: 5vh;
+}
+
+.ggText {
+    height: 50vh;
+    background-color: rgba(240, 248, 255, 0.308);
+    font-family: "seagram";
+    border-radius: 5px;
+}
+
+p {
+    color: black;
+    font-weight: bolder;
+    text-shadow: 0.5px 0 white, -0.5px 0 white, 0 0.5px white, 0 -0.5px white,
+               0.5px 0.5px white, -0.5px -0.5px white, 0.5px -0.5px white, -0.5px 0.5px white;
+    font-size: large;
+}
+
+.returnBtn {
+    background-color: black;
+    height: 10vh;
+    width: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "seagram";
+    font-size: large;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.returnBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 20px darkred, -5px -5px 20px darkred;
+}
+
+.pentagramgif {
+    height: 10vh;
+}
+
+@media (min-width: 576px){
+    .ggText {
+        height: 40vh;
+    }
+}
+
+@media (min-width: 768px){
+    
+    .ggText {
+        height: 50vh;
+    }
+    
+    p {
+        font-size: x-large;
+    }
+}
+
+@media (min-width: 1200px){
+    
+    .ggText {
+        height: 40vh;
+    }
+    
+    p {
+        font-size: x-large;
+    }
+}
+
+@font-face {
+    font-family: 'seagram';
+    src: url(../fonts/Seagram\ tfb.ttf) format('truetype');
+    font-style: normal;
+    font-weight: bolder;
+}
