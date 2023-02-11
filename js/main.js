@@ -46,12 +46,12 @@ const contadorTurnos = () => {
         contadorTurnosP1++
         console.log(contadorTurnosP1)
         contadTurnosP1.innerHTML = `Turnos: ${contadorTurnosP1}`
-        sessionStorage.setItem("turnosP1", JSON.stringify(contadorTurnosP1));
+        sessionStorage.setItem("turnosP1", (contadorTurnosP1));
     } else {
         contadorTurnosP2++
         console.log(contadorTurnosP2)
         contadTurnosP2.innerHTML = `Turnos: ${contadorTurnosP2}`
-        sessionStorage.setItem("turnosP2", JSON.stringify(contadorTurnosP2));
+        sessionStorage.setItem("turnosP2", (contadorTurnosP2));
     }
 
 }

@@ -104,10 +104,11 @@ input::placeholder {
     font-family: "seagram";
     color: white;
     box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.26) inset, -2px -2px 2px rgba(255, 255, 255, 0.199) inset;
+    cursor: pointer;
 }
 
 .typeBtn:hover {
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.397) inset, -2px -2px 2px rgba(0, 0, 0, 0.411) inset;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.521) inset, -2px -2px 2px rgba(0, 0, 0, 0.527) inset;
 }
 
 .playerType {
@@ -244,6 +245,10 @@ input::placeholder {
 
     .selectbtn {
         width: 30vw;
+    }
+
+    .nameTitle{
+        font-size: xx-large;
     }
 
 }

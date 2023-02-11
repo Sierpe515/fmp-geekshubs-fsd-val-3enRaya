@@ -1,8 +1,8 @@
 let winner = sessionStorage.getItem("winner");
 let usuario = JSON.parse(sessionStorage.getItem("usuario"));
 let ggText = document.getElementById("turns");
-let turnosP1 = JSON.parse(sessionStorage.getItem("turnosP1"));
-let turnosP2 = JSON.parse(sessionStorage.getItem("turnosP2"));
+let turnosP1 = (sessionStorage.getItem("turnosP1"));
+let turnosP2 = (sessionStorage.getItem("turnosP2"));
 let returnBtn = document.getElementById("returnBtn");
 
 if (winner == "X"){
