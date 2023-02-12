@@ -333,6 +333,14 @@ input::placeholder {
     
 }
 
+@media (min-width: 992px) {
+
+    .selectgif {
+        height: 15em;
+        width: 15em;
+    }
+}
+
 
 /* FONTS */
 

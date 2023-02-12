@@ -9,10 +9,6 @@ let fichaP2 = 3;
 
 let fichaBorrada = false;
 
-// let casillaInhabilitada = false;
-
-// let fichaQuitada;
-
 let miTablero = ["","","","","","","","",""];
 
 let juegoTerminado = false;
@@ -207,13 +203,6 @@ const comprueboGanador = () => {
 
 }
 
-// const inhabilitarCasilla = (casillaInhabilitada) => {
-//     if (!fichaQuitada) { 
-//         fichaQuitada = diccionario[casillaInhabilitada];
-//         document.getElementById(casillaInhabilitada).onclick = null;
-//     }
-// }
-
 tablero.map(
     (celda) => {
         celda.addEventListener('click', ()=> {
@@ -246,19 +235,11 @@ tablero.map(
 
                 turno = !turno;
 
-            } else if ((celda.innerHTML !=="") && (fichaP1 || fichaP2 === 0) && fichaBorrada === false){
+            } else if ((celda.innerHTML !=="") && (fichaP1 || fichaP2 === 0) && (fichaBorrada === false)){
 
-                if (celda.innerHTML === "X" && turno == true){
+                if (celda.innerHTML === "X" && turno == true && contadorTurnosP1 >= 3){
 
                     celda.innerHTML = "";
-
-
-
-                    // celda.innerHTML = null;
-                    
-                    // casillaInhabilitada = true;
-
-                    // inhabilitarCasilla();
 
                     fichaBorrada = true;
 
@@ -266,7 +247,7 @@ tablero.map(
 
                     fichasPlayer1.innerHTML = `Fichas: ${fichaP1}`
                         
-                } else if (celda.innerHTML === "O" && turno == false){
+                } else if (celda.innerHTML === "O" && turno == false && contadorTurnosP1 >= 3){
 
                     celda.innerHTML = "";
 

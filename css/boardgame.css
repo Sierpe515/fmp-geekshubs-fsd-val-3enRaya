@@ -64,12 +64,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "blackdemon";
+    font-family: "mephisto";
 }
 
 .boardcell {
-    height: 5em;
-    width: 5em;
+    /* height: 5em;
+    width: 5em; */
     display: flex;
     justify-content: center;
     align-items: center;

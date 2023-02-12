@@ -31,7 +31,7 @@ const chooseTypePl = (typeChosen) =>{
         let btnsP2 = Array.from(document.getElementsByClassName("typeBtnP2"));
 
             btnsP2.map(
-                ficha => ficha.onclick = null
+                btn => btn.onclick = null
             )
     }
 }
