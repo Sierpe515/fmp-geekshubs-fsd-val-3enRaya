@@ -9,7 +9,7 @@ const chooseToken = (tokenChosen) => {
             document.getElementById(tokenChosen).onclick = null;
             // fichasp1.classList.add("selectedTokenP1");
             // Para añadir clase al elemento y cambiarle el bgcolor?
-
+            
             console.log(tokenP1)
             sessionStorage.setItem("tokenChosenP1", tokenChosen)
             //Aqui deshabilitaremos los token del player1
@@ -24,6 +24,7 @@ const chooseToken = (tokenChosen) => {
 
         tokenP2 = tokens[tokenChosen];
         document.getElementById(tokenChosen).onclick = null;
+        // document.getElementById(tokenChosen).classList.add("selectedTokenP1");
 
         console.log(tokenP2)
         sessionStorage.setItem("tokenChosenP2", tokenChosen)

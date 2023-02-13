@@ -52,6 +52,24 @@ const contadorTurnos = () => {
 
 }
 
+const winnerP1 = () => {
+    console.log("Ha ganado X");
+    sessionStorage.setItem("winner", "X");
+    document.getElementById("boardt").classList.add("boardflicker")
+    setTimeout(()=>{
+        window.open("../pages/winnerpage.html","_self")
+    },4000); 
+}
+
+const winnerP2 = () => {
+    console.log("Ha ganado O");
+    sessionStorage.setItem("winner", "O");
+    document.getElementById("boardt").classList.add("boardflicker2")
+    setTimeout(()=>{
+        window.open("../pages/winnerpage.html","_self")
+    },4000);
+}
+
 const comprueboGanador = () => {
     console.log(miTablero);
 
@@ -60,17 +78,9 @@ const comprueboGanador = () => {
         juegoTerminado = true;
 
         if (miTablero[0] === "X"){
-            console.log("Ha ganado X");
-            sessionStorage.setItem("winner", "X");
-            setTimeout(()=>{
-                window.open("../pages/winnerpage.html","_self")
-            },1000); 
+            winnerP1();
         } else if (miTablero[0] === "O"){
-            console.log("Ha ganado O");
-            sessionStorage.setItem("winner", "O");
-            setTimeout(()=>{
-                window.open("../pages/winnerpage.html","_self")
-            },1000);
+            winnerP2();
         }
         
     } else if (miTablero[3] === miTablero[4] && miTablero [3] === miTablero [5] && miTablero[3]){
@@ -78,17 +88,9 @@ const comprueboGanador = () => {
         juegoTerminado = true;
 
         if (miTablero[3] === "X"){
-            console.log("Ha ganado X");
-            sessionStorage.setItem("winner", "X");
-            setTimeout(()=>{
-                window.open("../pages/winnerpage.html","_self")
-            },1000); 
+            winnerP1();
         } else if (miTablero[3] === "O"){
-            console.log("Ha ganado O");
-            sessionStorage.setItem("winner", "O");
-            setTimeout(()=>{
-                window.open("../pages/winnerpage.html","_self")
-            },1000);
+            winnerP2();
         }
 
     } else if (miTablero[6] === miTablero[7] && miTablero [6] === miTablero [8] && miTablero[6]){
@@ -96,17 +98,9 @@ const comprueboGanador = () => {
         juegoTerminado = true;
 
         if (miTablero[6] === "X"){
-            console.log("Ha ganado X");
-            sessionStorage.setItem("winner", "X");
-            setTimeout(()=>{
-                window.open("../pages/winnerpage.html","_self")
-            },1000); 
+            winnerP1();
         } else if (miTablero[6] === "O"){
-            console.log("Ha ganado O");
-            sessionStorage.setItem("winner", "O");
-            setTimeout(()=>{
-                window.open("../pages/winnerpage.html","_self")
-            },1000);
+            winnerP2();
         }
 
     } else if (miTablero[0] === miTablero[3] && miTablero [0] === miTablero [6] && miTablero[0]){
@@ -114,17 +108,9 @@ const comprueboGanador = () => {
         juegoTerminado = true;
 
         if (miTablero[0] === "X"){
-            console.log("Ha ganado X");
-            sessionStorage.setItem("winner", "X");
-            setTimeout(()=>{
-                window.open("../pages/winnerpage.html","_self")
-            },1000); 
+            winnerP1();
         } else if (miTablero[0] === "O"){
-            console.log("Ha ganado O");
-            sessionStorage.setItem("winner", "O");
-            setTimeout(()=>{
-                window.open("../pages/winnerpage.html","_self")
-            },1000);
+            winnerP2();
         }
 
     } else if (miTablero[1] === miTablero[4] && miTablero [1] === miTablero [7] && miTablero[1]){
@@ -132,17 +118,9 @@ const comprueboGanador = () => {
         juegoTerminado = true;
 
         if (miTablero[1] === "X"){
-            console.log("Ha ganado X");
-            sessionStorage.setItem("winner", "X");
-            setTimeout(()=>{
-                window.open("../pages/winnerpage.html","_self")
-            },1000); 
+            winnerP1();
         } else if (miTablero[1] === "O"){
-            console.log("Ha ganado O");
-            sessionStorage.setItem("winner", "O");
-            setTimeout(()=>{
-                window.open("../pages/winnerpage.html","_self")
-            },1000);
+            winnerP2();
         }
 
     } else if (miTablero[2] === miTablero[5] && miTablero [2] === miTablero [8] && miTablero[2]){
@@ -150,17 +128,9 @@ const comprueboGanador = () => {
         juegoTerminado = true;
 
         if (miTablero[2] === "X"){
-            console.log("Ha ganado X");
-            sessionStorage.setItem("winner", "X");
-            setTimeout(()=>{
-                window.open("../pages/winnerpage.html","_self")
-            },1000); 
+            winnerP1();
         } else if (miTablero[2] === "O"){
-            console.log("Ha ganado O");
-            sessionStorage.setItem("winner", "O");
-            setTimeout(()=>{
-                window.open("../pages/winnerpage.html","_self")
-            },1000);
+            winnerP2();
         }
 
     } else if (miTablero[0] === miTablero[4] && miTablero [0] === miTablero [8] && miTablero[0]){
@@ -168,17 +138,9 @@ const comprueboGanador = () => {
         juegoTerminado = true;
 
         if (miTablero[0] === "X"){
-            console.log("Ha ganado X");
-            sessionStorage.setItem("winner", "X");
-            setTimeout(()=>{
-                window.open("../pages/winnerpage.html","_self")
-            },1000); 
+            winnerP1();
         } else if (miTablero[0] === "O"){
-            console.log("Ha ganado O");
-            sessionStorage.setItem("winner", "O");
-            setTimeout(()=>{
-                window.open("../pages/winnerpage.html","_self")
-            },1000);
+            winnerP2();
         }
 
     } else if (miTablero[2] === miTablero[4] && miTablero [2] === miTablero [6] && miTablero[2]){
@@ -186,17 +148,9 @@ const comprueboGanador = () => {
         juegoTerminado = true;
 
         if (miTablero[2] === "X"){
-            console.log("Ha ganado X");
-            sessionStorage.setItem("winner", "X");
-            setTimeout(()=>{
-                window.open("../pages/winnerpage.html","_self")
-            },1000); 
+            winnerP1();
         } else if (miTablero[2] === "O"){
-            console.log("Ha ganado O");
-            sessionStorage.setItem("winner", "O");
-            setTimeout(()=>{
-                window.open("../pages/winnerpage.html","_self")
-            },1000);
+            winnerP2();
         }
 
     };

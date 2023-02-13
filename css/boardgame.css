@@ -51,13 +51,75 @@
 
 .boardttt {
     background-color: rgba(240, 248, 255, 0.466);
-    height: 15em;
-    width: 15em;
+    height: 15rem;
+    width: 15rem;
     border-radius: 10px;
-    /* padding-left: 2vw;
-    padding-right: 2vw; */
     display: grid;
     grid-template-columns: repeat(3, auto);
+}
+
+.boardflicker {
+    background-color: rgba(139, 0, 0, 0.541);
+
+    animation-name: parpadeo;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-name:parpadeo;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes parpadeo{  
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes parpadeo {  
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+   100% { opacity: 1.0; }
+}
+
+@keyframes parpadeo {  
+  0% { opacity: 1.0; }
+   50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+.boardflicker2 {
+    background-color: rgba(109, 255, 255, 0.425);
+
+    animation-name: parpadeo2;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-name:parpadeo2;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes parpadeo2{  
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes parpadeo2 {  
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+   100% { opacity: 1.0; }
+}
+
+@keyframes parpadeo2 {  
+  0% { opacity: 1.0; }
+   50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
 }
 
 .underboard {
@@ -68,18 +130,18 @@
 }
 
 .boardcell {
-    /* height: 5em;
-    width: 5em; */
+    height: 5rem;
+    width: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     cursor: pointer;
-    /* font-size: 3em; */
+    font-size: 3rem;
 }
 
 .boardgif {
-    height: 5em;
+    height: 5rem;
 }
 
 .spacebox {
@@ -150,12 +212,12 @@
     }
 
     .boardcell {
-    height: 7em;
-    width: 7em;
+    height: 7rem;
+    width: 7rem;
     }
 
     .boardgif {
-    height: 7em;
+    height: 7rem;
     }
 
     .framework {
@@ -243,14 +305,15 @@
     }
 
     .boardttt {
-        height: 30em;
-        width: 30em;
+        height: 30rem;
+        width: 30rem;
         }
     
     .boardcell {
-        height: 10em;
-        width: 10em;
+        height: 10rem;
+        width: 10rem;
         z-index: 10;
+        font-size: 5rem;
     }
 
     .boardgif {

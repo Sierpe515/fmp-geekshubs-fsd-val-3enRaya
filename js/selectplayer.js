@@ -25,6 +25,8 @@ button.addEventListener("click", ()=>{
 
     if( (playerInputs.player1 === "") || (playerInputs.player2 === "")){
         return;
+    } else if (playerInputs.player1 === playerInputs.player2){
+        return;
     }
 
     console.log(playerInputs);
