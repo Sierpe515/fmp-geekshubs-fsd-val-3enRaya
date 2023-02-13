@@ -28,3 +28,9 @@ returnBtn.addEventListener("click", ()=>{
     window.open("../pages/selectplayer.html","_self");
 
 });
+
+playAgainBtn.addEventListener("click", ()=>{
+
+    window.open("../pages/boardgame.html","_self");
+
+});

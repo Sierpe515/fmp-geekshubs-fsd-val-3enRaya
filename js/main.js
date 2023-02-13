@@ -219,6 +219,10 @@ tablero.map(
     }
 )
 
+resetbtn.addEventListener("click", ()=>{
+    window.open("../pages/boardgame.html","_self")
+})
+
 let fichasPlayer1 = document.getElementById("fichasp1");
 fichasPlayer1.innerHTML = `Fichas: ${fichaP1}`;
 
