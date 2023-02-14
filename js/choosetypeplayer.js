@@ -6,6 +6,7 @@ const chooseTypePl = (typeChosen) =>{
     if(!typeP1){
         
         typeP1 = typesBtn[typeChosen];
+        console.log(typeChosen)
         document.getElementById(typeChosen).onclick = null;
         // fbtnsP1.classList.add("selectedTokenP1");
         // Para añadir clase al elemento y cambiarle el bgcolor?

@@ -4,6 +4,8 @@ let tokenP2;
 const chooseToken = (tokenChosen) => {
 
     if(!tokenP1){
+
+            console.log("Entro en P1")
         
             tokenP1 = tokens[tokenChosen];
             document.getElementById(tokenChosen).onclick = null;
@@ -21,6 +23,8 @@ const chooseToken = (tokenChosen) => {
             )
             
     } else if (!tokenP2){
+
+        console.log("Entro en P2")
 
         tokenP2 = tokens[tokenChosen];
         document.getElementById(tokenChosen).onclick = null;
