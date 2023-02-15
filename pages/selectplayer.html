@@ -12,9 +12,9 @@
         <div class="colp1">
             <div class="p1token">
                 <div class="p1SelectTokens p1SelectTokensTitle textflicker">Choose your token:</div>
-                <div class="p1SelectTokens" onclick="chooseToken('token1P1')"><p id="token1P1" class="tokenP">e</p></div>
-                <div class="p1SelectTokens" onclick="chooseToken('token2P1')"><p id="token2P1" class="tokenP">k</p></div>
-                <div class="p1SelectTokens" onclick="chooseToken('token3P1')"><p id="token3P1" class="tokenP">f</p></div>
+                <div class="p1SelectTokens" onclick="chooseToken1('token1P1')"><p id="token1P1" class="tokenP">e</p></div>
+                <div class="p1SelectTokens" onclick="chooseToken1('token2P1')"><p id="token2P1" class="tokenP">k</p></div>
+                <div class="p1SelectTokens" onclick="chooseToken1('token3P1')"><p id="token3P1" class="tokenP">f</p></div>
                 <div class="p1SelectTokens"></div>
             </div>
             <div class="p1gif">
@@ -22,8 +22,8 @@
                 <!-- <p class="nameTextAlert"></p> -->
                 <input id="player2" class="namePlayer" name="player2" type="text" maxlength="10" placeholder="Introduce tu nombre">
                 <div class="typePlayerBox">
-                    <div class="playerType typeBtn typeBtnP1" id="p1Player" onclick="chooseTypePl('p1Player')">Player</div>
-                    <div class="cpuType typeBtn typeBtnP1" id="p1Cpu" onclick="chooseTypePl('p1Cpu')">CPU</div>
+                    <div class="playerType typeBtn typeBtnP1" id="p1Player" onclick="chooseTypePl1('p1Player')">Player</div>
+                    <div class="cpuType typeBtn typeBtnP1" id="p1Cpu" onclick="chooseTypePl1('p1Cpu')">CPU</div>
                 </div>
                 <img class="selectgif" src="../img/MfdI.gif" alt="palagif">
             </div>
@@ -40,16 +40,16 @@
                 <!-- <p class="nameTextAlert"></p> -->
                 <input id="player1" class="namePlayer" name="player1" type="text" maxlength="10" placeholder="Introduce tu nombre">
                 <div class="typePlayerBox">
-                    <div class="playerType typeBtn typeBtnP2" id="p2Player" onclick="chooseTypePl('p2Player')">Player</div>
-                    <div class="cpuType typeBtn typeBtnP2" id="p2Cpu" onclick="chooseTypePl('p2Cpu')">CPU</div>
+                    <div class="playerType typeBtn typeBtnP2" id="p2Player" onclick="chooseTypePl2('p2Player')">Player</div>
+                    <div class="cpuType typeBtn typeBtnP2" id="p2Cpu" onclick="chooseTypePl2('p2Cpu')">CPU</div>
                 </div>
                 <img class="selectgif" src="../img/WHfW.gif" alt="devilgif">
             </div>
             <div class="p2token">
                 <div class="p2SelectTokens p2SelectTokensTitle textflicker">Choose your token:</div>
-                <div class="p2SelectTokens" onclick="chooseToken('token1P2')"><p id="token1P2" class="tokenP">a</p></div>
-                <div class="p2SelectTokens" onclick="chooseToken('token2P2')"><p id="token2P2" class="tokenP">c</p></div>
-                <div class="p2SelectTokens" onclick="chooseToken('token3P2')"><p id="token3P2" class="tokenP">K</p></div>
+                <div class="p2SelectTokens" onclick="chooseToken2('token1P2')"><p id="token1P2" class="tokenP">a</p></div>
+                <div class="p2SelectTokens" onclick="chooseToken2('token2P2')"><p id="token2P2" class="tokenP">c</p></div>
+                <div class="p2SelectTokens" onclick="chooseToken2('token3P2')"><p id="token3P2" class="tokenP">K</p></div>
                 <div class="p2SelectTokens">
                     <audio class="audioControls" autoplay controls src="../audio/Diablo 1 [OST] - 02 - Town (152kbit_Opus).opus"></audio>
                 </div>
@@ -59,6 +59,7 @@
     
     <script src="../js/selecttypeplayer.js"></script>
     <script src="../js/choosetypeplayer.js"></script>
+    <script src="../js/selecttoken2"></script>
     <script src="../js/selecttoken.js"></script>
     <script src="../js/choosetoken.js"></script>
     <script src="../js/selectplayer.js"></script>

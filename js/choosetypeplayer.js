@@ -1,13 +1,16 @@
 let typeP1;
 let typeP2;
 
-const chooseTypePl = (typeChosen) =>{
+const chooseTypePl1 = (typeChosen) =>{
 
     if(!typeP1){
         
         typeP1 = typesBtn[typeChosen];
-        console.log(typeChosen)
-        document.getElementById(typeChosen).onclick = null;
+        // console.log(typeChosen)
+        // document.getElementById(typeChosen).onclick = null;
+        let typeP1Selected = document.getElementById(typeChosen);
+            typeP1Selected.onclick = null;
+            typeP1Selected.classList.add("tyP1Selected");
         // fbtnsP1.classList.add("selectedTokenP1");
         // Para añadir clase al elemento y cambiarle el bgcolor?
 
@@ -20,11 +23,17 @@ const chooseTypePl = (typeChosen) =>{
         btnsP1.map(
             btn => btn.onclick = null
         )
-        
-    } else if (!typeP2){
+    }
+}
+
+const chooseTypePl2 = (typeChosen) =>{
+
+    if (!typeP2){
 
         typeP2 = typesBtn[typeChosen];
-        document.getElementById(typeChosen).onclick = null;
+        let typeP2Selected = document.getElementById(typeChosen);
+            typeP2Selected.onclick = null;
+            typeP2Selected.classList.add("tyP2Selected");
 
         console.log(typeP2)
         sessionStorage.setItem("typePlayerChosenP2", typeChosen)

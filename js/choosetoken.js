@@ -1,16 +1,16 @@
 let tokenP1;
 let tokenP2;
 
-const chooseToken = (tokenChosen) => {
+const chooseToken1 = (tokenChosen) => {
 
     if(!tokenP1){
 
             console.log("Entro en P1")
         
-            tokenP1 = tokens[tokenChosen];
-            document.getElementById(tokenChosen).onclick = null;
-            // fichasp1.classList.add("selectedTokenP1");
-            // Para añadir clase al elemento y cambiarle el bgcolor?
+            tokenP1 = tokensP1[tokenChosen];
+            let tokenP1Selected = document.getElementById(tokenChosen);
+            tokenP1Selected.onclick = null;
+            tokenP1Selected.classList.add("tP1Selected");
             
             console.log(tokenP1)
             sessionStorage.setItem("tokenChosenP1", tokenChosen)
@@ -21,13 +21,19 @@ const chooseToken = (tokenChosen) => {
             fichasp1.map(
                 ficha => ficha.onclick = null
             )
+    }
+}
+
+const chooseToken2 = (tokenChosen) => {
             
-    } else if (!tokenP2){
+    if (!tokenP2){
 
         console.log("Entro en P2")
 
-        tokenP2 = tokens[tokenChosen];
-        document.getElementById(tokenChosen).onclick = null;
+        tokenP2 = tokensP2[tokenChosen];
+        let tokenP2Selected = document.getElementById(tokenChosen);
+            tokenP2Selected.onclick = null;
+            tokenP2Selected.classList.add("tP2Selected");
         // document.getElementById(tokenChosen).classList.add("selectedTokenP1");
 
         console.log(tokenP2)

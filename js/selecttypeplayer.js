@@ -1,13 +1,19 @@
-class TypePlayer {
+class TypePlayer1 {
     constructor(nombre){
         this.nombre = nombre;
     }
 }
 
-let p1Player = new TypePlayer("p1Player");
-let p1Cpu = new TypePlayer("p1Cpu");
-let p2Player = new TypePlayer("p2Player");
-let p2Cpu = new TypePlayer("p2Cpu");
+class TypePlayer2 {
+    constructor(nombre){
+        this.nombre = nombre;
+    }
+}
+
+let p1Player = new TypePlayer1("p1Player");
+let p1Cpu = new TypePlayer1("p1Cpu");
+let p2Player = new TypePlayer2("p2Player");
+let p2Cpu = new TypePlayer2("p2Cpu");
 
 // DICCIONARIO
 

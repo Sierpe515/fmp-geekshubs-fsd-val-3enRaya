@@ -173,7 +173,7 @@ tablero.map(
 
                 marcadorTurno();
 
-                celda.innerHTML = (turno) ? "X" : "O";
+                celda.innerHTML = (turno) ? printTokenP1() : "O";
 
                 (turno) ? fichaP1-- : fichaP2--;
 
@@ -219,9 +219,13 @@ tablero.map(
     }
 )
 
+// RESET BUTTON
+
 resetbtn.addEventListener("click", ()=>{
     window.open("../pages/boardgame.html","_self")
 })
+
+// INFO IN PLAYERS SQUARES
 
 let fichasPlayer1 = document.getElementById("fichasp1");
 fichasPlayer1.innerHTML = `Fichas: ${fichaP1}`;
@@ -238,3 +242,22 @@ contadTurnosP1.innerHTML = `Turnos: ${contadorTurnosP1}`
 
 let contadTurnosP2 = document.getElementById("turnosP2");
 contadTurnosP2.innerHTML = `Turnos: ${contadorTurnosP2}`
+
+// SELECTED TOKENS
+
+const printTokenP1 = () => {
+    switch (tokenP1){
+
+        case "token1P1":
+            "e"
+        break;
+
+        case "token2P1":
+            "k"
+        break;
+
+        case "token3P1":
+            "f"
+        break;
+    }
+}

@@ -62,14 +62,15 @@ input::placeholder {
     text-shadow: 2px 2px 10px orangered, -2px -2px 10px orangered;
 }
 
-.selectedTokenP1 {
-    background-color: aliceblue;
-}
-
 .p1SelectTokensTitle {
     font-family: "seagram";
     font-size: large;
     color: rgb(150, 150, 150);
+}
+
+.tP1Selected {
+    color: turquoise;
+    transform: scale(1.3);
 }
 
 .textflicker {
@@ -147,6 +148,16 @@ input::placeholder {
 
 .cpuType {
     background-color: darkred;
+}
+
+.tyP1Selected{
+    background-color: turquoise;
+    transform: scale(1.3);
+}
+
+.tyP2Selected{
+    background-color: orange;
+    transform: scale(1.3);
 }
 
 .p1gif {
@@ -243,6 +254,11 @@ input::placeholder {
     font-family: "seagram";
     font-size: large;
     color: rgb(150, 150, 150);
+}
+
+.tP2Selected {
+    color: orange;
+    transform: scale(1.3);
 }
 
 .audioControls {

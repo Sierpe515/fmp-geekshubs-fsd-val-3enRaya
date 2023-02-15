@@ -27,7 +27,11 @@ button.addEventListener("click", ()=>{
         return;
     } else if (playerInputs.player1 === playerInputs.player2){
         return;
-    }
+    } 
+    // else if (typePlayer1 === "p1Player" && typePlayer2 === "p2Player"){
+    //     console.log("No pueden haber dos Cpus")
+    //     return;
+    // }
 
     console.log(playerInputs);
     
