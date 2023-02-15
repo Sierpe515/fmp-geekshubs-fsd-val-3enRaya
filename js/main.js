@@ -157,67 +157,74 @@ const comprueboGanador = () => {
 
 }
 
-tablero.map(
-    (celda) => {
-        celda.addEventListener('click', ()=> {
+// if (typeP1 === "p1Player" && typeP2 === "p2player"){
 
-            //Ejemplo de como añadir una clase a un elemento seleccionado
-            // celda.classList.add('cellDesign2');
+    tablero.map(
+        (celda) => {
+            celda.addEventListener('click', ()=> {
 
-            //Ejemplo de inyección de HTML desde JavaScript
-            // celda.innerHTML = `<p class='devil'>NUNCA LO ACABARAS</p>`;
+                //Ejemplo de como añadir una clase a un elemento seleccionado
+                // celda.classList.add('cellDesign2');
 
-            if (juegoTerminado) return;
+                //Ejemplo de inyección de HTML desde JavaScript
+                // celda.innerHTML = `<p class='devil'>NUNCA LO ACABARAS</p>`;
 
-            if((celda.innerHTML === "") && (fichaP1 || fichaP2 > 0)){
+                if (juegoTerminado) return;
 
-                marcadorTurno();
+                if((celda.innerHTML === "") && (fichaP1 || fichaP2 > 0)){
 
-                celda.innerHTML = (turno) ? printTokenP1() : "O";
+                    marcadorTurno();
 
-                (turno) ? fichaP1-- : fichaP2--;
+                    celda.innerHTML = (turno) ? `X` : "O";
 
-                (turno) ? fichasPlayer1.innerHTML = `Fichas: ${fichaP1}` : fichasPlayer2.innerHTML = `Fichas: ${fichaP2}`;
+                    //`${tokenP1}`
+                    // console.log(tokenP1) ===> null?
 
-                miTablero[celda.id] = (turno) ? "X" : "O";
+                    (turno) ? fichaP1-- : fichaP2--;
 
-                comprueboGanador();
+                    (turno) ? fichasPlayer1.innerHTML = `Fichas: ${fichaP1}` : fichasPlayer2.innerHTML = `Fichas: ${fichaP2}`;
 
-                fichaBorrada = false
+                    miTablero[celda.id] = (turno) ? "X" : "O";
 
-                contadorTurnos();
+                    comprueboGanador();
 
-                turno = !turno;
+                    fichaBorrada = false
 
-            } else if ((celda.innerHTML !=="") && (fichaP1 || fichaP2 === 0) && (fichaBorrada === false)){
+                    contadorTurnos();
 
-                if (celda.innerHTML === "X" && turno == true && contadorTurnosP1 >= 3){
+                    turno = !turno;
 
-                    celda.innerHTML = "";
+                } else if ((celda.innerHTML !=="") && (fichaP1 || fichaP2 === 0) && (fichaBorrada === false)){
 
-                    fichaBorrada = true;
+                    if (celda.innerHTML === "X" && turno == true && contadorTurnosP1 >= 3){
 
-                    fichaP1++;
+                        celda.innerHTML = "";
 
-                    fichasPlayer1.innerHTML = `Fichas: ${fichaP1}`
-                        
-                } else if (celda.innerHTML === "O" && turno == false && contadorTurnosP1 >= 3){
+                        fichaBorrada = true;
 
-                    celda.innerHTML = "";
+                        fichaP1++;
 
-                    fichaBorrada = true;
+                        fichasPlayer1.innerHTML = `Fichas: ${fichaP1}`
+                            
+                    } else if (celda.innerHTML === "O" && turno == false && contadorTurnosP1 >= 3){
 
-                    fichaP2++;
+                        celda.innerHTML = "";
 
-                    fichasPlayer2.innerHTML = `Fichas: ${fichaP2}`
+                        fichaBorrada = true;
 
-                    }
+                        fichaP2++;
 
-                miTablero[celda.id] = "";
-            }
-        })
-    }
-)
+                        fichasPlayer2.innerHTML = `Fichas: ${fichaP2}`
+
+                        }
+
+                    miTablero[celda.id] = "";
+                }
+            })
+        }
+    )
+
+// }
 
 // RESET BUTTON
 
@@ -245,19 +252,24 @@ contadTurnosP2.innerHTML = `Turnos: ${contadorTurnosP2}`
 
 // SELECTED TOKENS
 
-const printTokenP1 = () => {
-    switch (tokenP1){
+// const printTokenP1 = () => {
+//     switch (tokenP1){
 
-        case "token1P1":
-            "e"
-        break;
+//         case "token1P1":
+//             "e";
+//         break;
 
-        case "token2P1":
-            "k"
-        break;
+//         case "token2P1":
+//             "k";
+//         break;
 
-        case "token3P1":
-            "f"
-        break;
-    }
-}
+//         case "token3P1":
+//             "f";
+//         break;
+//     }
+// }
+
+
+//     if (tokenP1 === "token1P1"){
+//         "e"
+//     }
