@@ -147,6 +147,7 @@
     position: absolute;
     cursor: pointer;
     font-size: 3rem;
+    padding-top: 0.4em;
 }
 
 .boardgif {

@@ -7,6 +7,8 @@ let contadorTurnosP2 = 0;
 let fichaP1 = 3;
 let fichaP2 = 3;
 
+let fichacpu = false;
+
 let fichaBorrada = false;
 
 let miTablero = ["","","","","","","","",""];
@@ -157,13 +159,107 @@ const comprueboGanador = () => {
 
 }
 
-let typeP1111 = sessionStorage.getItem('typePlayerChosenP1')
-let typeP2222 = sessionStorage.getItem('typePlayerChosenP2')
+const intentarGanar = () => {
+    console.log("Te voy a ganar")
+    combinacionGanadora.map(conseguirCombinacion => {
+        let [pos1, pos2, pos3] = conseguirCombinacion;
+        
+        if (fichacpu == false && miTablero[pos1] === "O" && miTablero[pos2] === "O" && miTablero[pos3] === "" && miTablero[pos1]){
+            console.log("Aquí te puedo ganar");
+            console.log([pos3])
+            // reprodAudio ();
+            tablero[pos3].innerHTML = printTokenP2(tokenselectP2);
+            miTablero[pos3] = "O"
+            fichacpu = true
+        } else if (fichacpu == false && miTablero[pos1] === "O" && miTablero[pos3] === "O" && miTablero[pos2] === "" && miTablero[pos1]){
+            console.log("Aquí te puedo ganar", miTablero[pos2]);
+            console.log([pos2])
+            tablero[pos2].innerHTML = printTokenP2(tokenselectP2);
+            miTablero[pos2] = "O"
+            fichacpu = true
+        } else if (fichacpu == false && miTablero[pos2] === "O" && miTablero[pos3] === "O" && miTablero[pos1] === "" && miTablero[pos2]){
+            console.log("Aquí te puedo ganar", miTablero[pos1]);
+            console.log([pos1])
+            tablero[pos1].innerHTML = printTokenP2(tokenselectP2);
+            miTablero[pos1] = "O"
+            fichacpu = true
+        } else {
+            console.log("Por aquí no pasa nada");
+            console.log(fichacpu)
+        }
+    })
+}
 
-console.log(typeP1111 === "p1Player");
-console.log(typeP2222 === "p2layer");
+const evitarGanador = () => {
+    console.log("Voy a evitar que ganes")
+    combinacionGanadora.map(EvitarCombinacion => {
+        let [pos1, pos2, pos3] = EvitarCombinacion;
+        
+        if (fichacpu == false && miTablero[pos1] === "X" && miTablero[pos2] === "X" && miTablero[pos3] === "" && miTablero[pos1]){
+            console.log("Aquí me puedes ganar");
+            console.log([pos3])
+            // reprodAudio ();
+            tablero[pos3].innerHTML = printTokenP2(tokenselectP2);
+            miTablero[pos3] = "O"
+            fichacpu = true
+        } else if (fichacpu == false && miTablero[pos1] === "X" && miTablero[pos3] === "X" && miTablero[pos2] === "" && miTablero[pos1]){
+            console.log("Aquí me puedes ganar", miTablero[pos2]);
+            console.log([pos2])
+            tablero[pos2].innerHTML = printTokenP2(tokenselectP2);
+            miTablero[pos2] = "O"
+            fichacpu = true
+        } else if (fichacpu == false && miTablero[pos2] === "X" && miTablero[pos3] === "X" && miTablero[pos1] === "" && miTablero[pos2]){
+            console.log("Aquí me puedes ganar", miTablero[pos1]);
+            console.log([pos1])
+            tablero[pos1].innerHTML = printTokenP2(tokenselectP2);
+            miTablero[pos1] = "O"
+            fichacpu = true
+        } else {
+            console.log("Por aquí no pasa nada");
+            console.log(fichacpu)
+        }
+    })
+}
 
-if (typeP1111 === "p1Player" && typeP2222 === "p2Player"){
+const jugadaCpu = () => {
+    
+    if (fichacpu == false){
+        let aleatorio = tablero[Math.floor(Math.random() * tablero.length)];
+        console.log (aleatorio)
+        while (aleatorio.innerHTML !== ""){
+            aleatorio = tablero[Math.floor(Math.random() * tablero.length)]
+        }
+        aleatorio.innerHTML = printTokenP2(tokenselectP2);
+        miTablero[aleatorio.id] = "O";
+        fichacpu = true
+    }
+
+}
+
+const robarCpu = () => {
+    if (contadorTurnosP1 > 2){
+        console.log ("Debería de quitar una ficha")
+        let aleatorio = tablero[Math.floor(Math.random() * tablero.length)];
+        while (aleatorio.innerHTML !== "O"){
+            aleatorio = tablero[Math.floor(Math.random() * tablero.length)]
+        }
+        console.log("Voy a robar esta ficha");
+        aleatorio.innerHTML = "";
+        miTablero[aleatorio.id] = "";
+        console.log(aleatorio)
+    }
+}
+
+let typeP1pl = sessionStorage.getItem('typePlayerChosenP1')
+let typeP2pl = sessionStorage.getItem('typePlayerChosenP2')
+
+console.log(typeP1pl === "p1Player");
+console.log(typeP2pl === "p2layer");
+
+const tokenselectP1 = sessionStorage.getItem('tokenChosenP1')
+const tokenselectP2 = sessionStorage.getItem('tokenChosenP2')
+
+if (typeP1pl === "p1Player" && typeP2pl === "p2Player"){
 
     tablero.map(
         (celda) => {
@@ -181,17 +277,11 @@ if (typeP1111 === "p1Player" && typeP2222 === "p2Player"){
 
                     marcadorTurno();
 
-                    const tokenDani = sessionStorage.getItem('tokenChosenP1')
+                    // const tokenselectP1 = sessionStorage.getItem('tokenChosenP1')
 
-                    // if(tokenDani === "token1P1"){
-                        celda.innerHTML = (turno) ? printTokenP1(tokenDani) : "O";
-                    // }
-
-
+                    // const tokenselectP2 = sessionStorage.getItem('tokenChosenP2')
                     
-
-                    //`${tokenP1}`
-                    // console.log(tokenP1) ===> null?
+                    celda.innerHTML = (turno) ? printTokenP1(tokenselectP1) : printTokenP2(tokenselectP2);
 
                     (turno) ? fichaP1-- : fichaP2--;
 
@@ -239,6 +329,128 @@ if (typeP1111 === "p1Player" && typeP2222 === "p2Player"){
 
 }
 
+if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
+    
+    tablero.map(
+        (celda) => {
+            celda.addEventListener('click', ()=> {
+    
+                if (juegoTerminado) return;
+    
+                if((celda.innerHTML === "") && (fichaP1 > 0)){
+                    
+                    celda.innerHTML = printTokenP1(tokenselectP1);
+                    
+                    fichaP1-- ;
+    
+                    miTablero[celda.id] = "X";
+    
+                    fichacpu = false;
+    
+                    robarCpu();
+    
+                    // If (evitarGanador = true) else (jugadaCpu)?
+                    intentarGanar ();
+                    
+                    evitarGanador ();
+                    
+                    jugadaCpu();
+    
+    
+                    fichaBorrada = false
+    
+                    contadorTurnosP1++
+                    console.log(contadorTurnosP1)
+    
+                    comprueboGanador();
+    
+                    // turno = !turno;
+                } else if ((celda.innerHTML !=="") && (fichaP1 === 0)){
+                        celda.innerHTML = "";
+                        fichaBorrada = true;
+                        fichaP1++;
+    
+                    miTablero[celda.id] = "";
+                    // miTablero[celda.id] = null;
+                    // marca como null en el console log, pero no inhabilita casilla
+                    
+    
+                }
+            })
+        }
+    )
+
+}
+
+if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
+
+    tablero.map(
+        (celda) => {   
+    
+            if (juegoTerminado) return;
+    
+            // while((celda.innerHTML === "") && (fichaP1 > 0) && fichacpu === false){
+                console.log('hola');
+                robarCpu();
+    
+                intentarGanar ();
+                
+                evitarGanador ();
+                
+                jugadaCpu();
+                console.log('adios');
+    
+            // }
+    
+            celda.addEventListener('click', ()=> {
+                console.log('1');
+                if((celda.innerHTML === "") && (fichaP1 > 0)){
+                console.log('2');
+                    
+                    celda.innerHTML = "X";
+                    
+                    fichaP1-- ;
+    
+                    miTablero[celda.id] = "X";
+    
+                    fichaBorrada = false
+    
+                    contadorTurnosP1++
+                    console.log(contadorTurnosP1)
+    
+                    comprueboGanador();
+    
+                    fichacpu = false;
+    
+                    // while((celda.innerHTML === "") && (fichaP1 > 0) && fichacpu === false){
+                console.log('hola');
+                robarCpu();
+    
+                intentarGanar ();
+                
+                evitarGanador ();
+                
+                jugadaCpu();
+                console.log('adios');
+    
+            // }
+    
+                } else if ((celda.innerHTML !=="") && (fichaP1 === 0)){
+                console.log('3');
+    
+                        celda.innerHTML = "";
+                        fichaBorrada = true;
+                        fichaP1++;
+    
+                    miTablero[celda.id] = "";
+                }
+            })
+    
+        }
+    )
+
+}
+
 // RESET BUTTON
 
 resetbtn.addEventListener("click", ()=>{
@@ -269,15 +481,34 @@ const printTokenP1 = (chosenToken) => {
     switch (chosenToken){
 
         case "token1P1":
-            return "e";
+            console.log("ficha1")
+            return "a";
 
         case "token2P1":
-            return "k";
+            console.log("ficha2")
+            return "c";
 
         case "token3P1":
-            return "f";
-    }
+            console.log("ficha3")
+            return "K";
+    };
+}
 
+    const printTokenP2 = (chosenToken) => {
+        switch (chosenToken){
+    
+            case "token1P2":
+                console.log("ficha4")
+                return "e";
+    
+            case "token2P2":
+                console.log("ficha5")
+                return "k";
+    
+            case "token3P2":
+                console.log("ficha6")
+                return "f";
+        };
 
     // const result = {
     //     token1P1: "e",
@@ -286,10 +517,3 @@ const printTokenP1 = (chosenToken) => {
 
     // return result.chosenToken
 }
-
-
-//     if (tokenP1 === "token1P1"){
-//         "e"
-//     }
-
-console.log(printTokenP1("jkahskjahsdkj"));
