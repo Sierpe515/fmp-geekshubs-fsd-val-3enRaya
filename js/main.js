@@ -157,7 +157,13 @@ const comprueboGanador = () => {
 
 }
 
-// if (typeP1 === "p1Player" && typeP2 === "p2player"){
+let typeP1111 = sessionStorage.getItem('typePlayerChosenP1')
+let typeP2222 = sessionStorage.getItem('typePlayerChosenP2')
+
+console.log(typeP1111 === "p1Player");
+console.log(typeP2222 === "p2layer");
+
+if (typeP1111 === "p1Player" && typeP2222 === "p2Player"){
 
     tablero.map(
         (celda) => {
@@ -175,7 +181,14 @@ const comprueboGanador = () => {
 
                     marcadorTurno();
 
-                    celda.innerHTML = (turno) ? `X` : "O";
+                    const tokenDani = sessionStorage.getItem('tokenChosenP1')
+
+                    // if(tokenDani === "token1P1"){
+                        celda.innerHTML = (turno) ? printTokenP1(tokenDani) : "O";
+                    // }
+
+
+                    
 
                     //`${tokenP1}`
                     // console.log(tokenP1) ===> null?
@@ -224,7 +237,7 @@ const comprueboGanador = () => {
         }
     )
 
-// }
+}
 
 // RESET BUTTON
 
@@ -252,24 +265,31 @@ contadTurnosP2.innerHTML = `Turnos: ${contadorTurnosP2}`
 
 // SELECTED TOKENS
 
-// const printTokenP1 = () => {
-//     switch (tokenP1){
+const printTokenP1 = (chosenToken) => {
+    switch (chosenToken){
 
-//         case "token1P1":
-//             "e";
-//         break;
+        case "token1P1":
+            return "e";
 
-//         case "token2P1":
-//             "k";
-//         break;
+        case "token2P1":
+            return "k";
 
-//         case "token3P1":
-//             "f";
-//         break;
-//     }
-// }
+        case "token3P1":
+            return "f";
+    }
+
+
+    // const result = {
+    //     token1P1: "e",
+    //     token2P1: "k" 
+    // }
+
+    // return result.chosenToken
+}
 
 
 //     if (tokenP1 === "token1P1"){
 //         "e"
 //     }
+
+console.log(printTokenP1("jkahskjahsdkj"));
