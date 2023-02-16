@@ -168,19 +168,19 @@ const intentarGanar = () => {
             console.log("Aquí te puedo ganar");
             console.log([pos3])
             // reprodAudio ();
-            tablero[pos3].innerHTML = printTokenP2(tokenselectP2);
+            tablero[pos3].innerHTML = "O";
             miTablero[pos3] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos1] === "O" && miTablero[pos3] === "O" && miTablero[pos2] === "" && miTablero[pos1]){
             console.log("Aquí te puedo ganar", miTablero[pos2]);
             console.log([pos2])
-            tablero[pos2].innerHTML = printTokenP2(tokenselectP2);
+            tablero[pos2].innerHTML = "O";
             miTablero[pos2] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos2] === "O" && miTablero[pos3] === "O" && miTablero[pos1] === "" && miTablero[pos2]){
             console.log("Aquí te puedo ganar", miTablero[pos1]);
             console.log([pos1])
-            tablero[pos1].innerHTML = printTokenP2(tokenselectP2);
+            tablero[pos1].innerHTML = "O";
             miTablero[pos1] = "O"
             fichacpu = true
         } else {
@@ -199,19 +199,19 @@ const evitarGanador = () => {
             console.log("Aquí me puedes ganar");
             console.log([pos3])
             // reprodAudio ();
-            tablero[pos3].innerHTML = printTokenP2(tokenselectP2);
+            tablero[pos3].innerHTML = "O";
             miTablero[pos3] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos1] === "X" && miTablero[pos3] === "X" && miTablero[pos2] === "" && miTablero[pos1]){
             console.log("Aquí me puedes ganar", miTablero[pos2]);
             console.log([pos2])
-            tablero[pos2].innerHTML = printTokenP2(tokenselectP2);
+            tablero[pos2].innerHTML = "O";
             miTablero[pos2] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos2] === "X" && miTablero[pos3] === "X" && miTablero[pos1] === "" && miTablero[pos2]){
             console.log("Aquí me puedes ganar", miTablero[pos1]);
             console.log([pos1])
-            tablero[pos1].innerHTML = printTokenP2(tokenselectP2);
+            tablero[pos1].innerHTML = "O";
             miTablero[pos1] = "O"
             fichacpu = true
         } else {
@@ -229,7 +229,7 @@ const jugadaCpu = () => {
         while (aleatorio.innerHTML !== ""){
             aleatorio = tablero[Math.floor(Math.random() * tablero.length)]
         }
-        aleatorio.innerHTML = printTokenP2(tokenselectP2);
+        aleatorio.innerHTML = "O";
         miTablero[aleatorio.id] = "O";
         fichacpu = true
     }
@@ -237,6 +237,21 @@ const jugadaCpu = () => {
 }
 
 const robarCpu = () => {
+    if (contadorTurnosP1 > 3){
+        console.log ("Debería de quitar una ficha")
+        let aleatorio = tablero[Math.floor(Math.random() * tablero.length)];
+        while (aleatorio.innerHTML !== "O"){
+            aleatorio = tablero[Math.floor(Math.random() * tablero.length)]
+        }
+        console.log("Voy a robar esta ficha");
+        aleatorio.innerHTML = "";
+        miTablero[aleatorio.id] = "";
+        console.log(aleatorio);
+        fichaP2++;
+    }
+}
+
+const robarCpu2 = () => {
     if (contadorTurnosP1 > 2){
         console.log ("Debería de quitar una ficha")
         let aleatorio = tablero[Math.floor(Math.random() * tablero.length)];
@@ -246,7 +261,8 @@ const robarCpu = () => {
         console.log("Voy a robar esta ficha");
         aleatorio.innerHTML = "";
         miTablero[aleatorio.id] = "";
-        console.log(aleatorio)
+        console.log(aleatorio);
+        fichaP2++;
     }
 }
 
@@ -338,7 +354,7 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
                     // console.log(tokenselectP2)
 
                     
-                    celda.innerHTML = printTokenP1(tokenselectP1);
+                    celda.innerHTML = getTokenP1(tokenselectP1);
                     
                     fichaP1--;
                     fichasPlayer1.innerHTML = `Fichas: ${fichaP1}`
@@ -409,11 +425,11 @@ if (typeP1pl === "p1Cpu" && typeP2pl === "p2Player"){
                 if((celda.innerHTML === "") && (fichaP1 > 0)){
                 console.log('2');
 
-                    const tokenselectP1 = sessionStorage.getItem('tokenChosenP1')
-                    const tokenselectP2 = sessionStorage.getItem('tokenChosenP2')
-                    console.log(tokenselectP2)
+                    // const tokenselectP1 = sessionStorage.getItem('tokenChosenP1')
+                    // const tokenselectP2 = sessionStorage.getItem('tokenChosenP2')
+                    // console.log(tokenselectP2)
                     
-                    celda.innerHTML = printTokenP1(tokenselectP1);
+                    celda.innerHTML = "X";
                     
                     fichaP1-- ;
     
@@ -430,7 +446,7 @@ if (typeP1pl === "p1Cpu" && typeP2pl === "p2Player"){
     
                     // while((celda.innerHTML === "") && (fichaP1 > 0) && fichacpu === false){
                 console.log('hola');
-                robarCpu();
+                robarCpu2();
     
                 intentarGanar ();
                 
@@ -438,6 +454,8 @@ if (typeP1pl === "p1Cpu" && typeP2pl === "p2Player"){
                 
                 jugadaCpu();
                 console.log('adios');
+
+                comprueboGanador();
     
             // }
     
@@ -522,4 +540,20 @@ const printTokenP2 = (chosenToken) => {
     // }
 
     // return result.chosenToken
+}
+
+function getTokenP1 (type){
+    return {
+        'token1P1': "a",
+        'token2P1': "c",
+        'token3P1': "K"
+    }[type];
+}
+
+function getTokenP2 (type){
+    return {
+        'token1P2': "e",
+        'token2P2': "k",
+        'token3P2': "f"
+    }[type];
 }
