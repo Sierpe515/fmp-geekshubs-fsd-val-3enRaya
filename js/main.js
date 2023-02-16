@@ -265,21 +265,15 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Player"){
         (celda) => {
             celda.addEventListener('click', ()=> {
 
-                //Ejemplo de como añadir una clase a un elemento seleccionado
-                // celda.classList.add('cellDesign2');
-
-                //Ejemplo de inyección de HTML desde JavaScript
-                // celda.innerHTML = `<p class='devil'>NUNCA LO ACABARAS</p>`;
-
                 if (juegoTerminado) return;
 
                 if((celda.innerHTML === "") && (fichaP1 || fichaP2 > 0)){
 
                     marcadorTurno();
 
-                    // const tokenselectP1 = sessionStorage.getItem('tokenChosenP1')
+                    const tokenselectP1 = sessionStorage.getItem('tokenChosenP1')
 
-                    // const tokenselectP2 = sessionStorage.getItem('tokenChosenP2')
+                    const tokenselectP2 = sessionStorage.getItem('tokenChosenP2')
                     
                     celda.innerHTML = (turno) ? printTokenP1(tokenselectP1) : printTokenP2(tokenselectP2);
 
@@ -299,7 +293,7 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Player"){
 
                 } else if ((celda.innerHTML !=="") && (fichaP1 || fichaP2 === 0) && (fichaBorrada === false)){
 
-                    if (celda.innerHTML === "X" && turno == true && contadorTurnosP1 >= 3){
+                    if (celda.innerHTML === printTokenP1(tokenselectP1) && turno == true && contadorTurnosP1 >= 3){
 
                         celda.innerHTML = "";
 
@@ -309,7 +303,7 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Player"){
 
                         fichasPlayer1.innerHTML = `Fichas: ${fichaP1}`
                             
-                    } else if (celda.innerHTML === "O" && turno == false && contadorTurnosP1 >= 3){
+                    } else if (celda.innerHTML === printTokenP2(tokenselectP2) && turno == false && contadorTurnosP1 >= 3){
 
                         celda.innerHTML = "";
 
@@ -338,10 +332,19 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
                 if (juegoTerminado) return;
     
                 if((celda.innerHTML === "") && (fichaP1 > 0)){
+
+                    // const tokenselectP1 = sessionStorage.getItem('tokenChosenP1')
+                    // const tokenselectP2 = sessionStorage.getItem('tokenChosenP2')
+                    // console.log(tokenselectP2)
+
                     
                     celda.innerHTML = printTokenP1(tokenselectP1);
                     
-                    fichaP1-- ;
+                    fichaP1--;
+                    fichasPlayer1.innerHTML = `Fichas: ${fichaP1}`
+
+                    contadorTurnosP1++
+                    console.log(contadorTurnosP1)
     
                     miTablero[celda.id] = "X";
     
@@ -349,18 +352,16 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
     
                     robarCpu();
     
-                    // If (evitarGanador = true) else (jugadaCpu)?
                     intentarGanar ();
                     
                     evitarGanador ();
                     
                     jugadaCpu();
     
+                    fichaP2--;
+                    fichasPlayer2.innerHTML = `Fichas: ${fichaP2}`
     
                     fichaBorrada = false
-    
-                    contadorTurnosP1++
-                    console.log(contadorTurnosP1)
     
                     comprueboGanador();
     
@@ -371,10 +372,6 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
                         fichaP1++;
     
                     miTablero[celda.id] = "";
-                    // miTablero[celda.id] = null;
-                    // marca como null en el console log, pero no inhabilita casilla
-                    
-    
                 }
             })
         }
@@ -382,7 +379,7 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
 
 }
 
-if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
+if (typeP1pl === "p1Cpu" && typeP2pl === "p2Player"){
 
     tablero.map(
         (celda) => {   
@@ -391,11 +388,16 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
     
             // while((celda.innerHTML === "") && (fichaP1 > 0) && fichacpu === false){
                 console.log('hola');
-                robarCpu();
+                // robarCpu();
     
-                intentarGanar ();
+                // intentarGanar ();
                 
-                evitarGanador ();
+                // evitarGanador ();
+
+                const tokenselectP1 = sessionStorage.getItem('tokenChosenP1')
+                console.log(tokenselectP1)
+                const tokenselectP2 = sessionStorage.getItem('tokenChosenP2')
+                console.log(tokenselectP2)
                 
                 jugadaCpu();
                 console.log('adios');
@@ -406,8 +408,12 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
                 console.log('1');
                 if((celda.innerHTML === "") && (fichaP1 > 0)){
                 console.log('2');
+
+                    const tokenselectP1 = sessionStorage.getItem('tokenChosenP1')
+                    const tokenselectP2 = sessionStorage.getItem('tokenChosenP2')
+                    console.log(tokenselectP2)
                     
-                    celda.innerHTML = "X";
+                    celda.innerHTML = printTokenP1(tokenselectP1);
                     
                     fichaP1-- ;
     
@@ -494,21 +500,21 @@ const printTokenP1 = (chosenToken) => {
     };
 }
 
-    const printTokenP2 = (chosenToken) => {
-        switch (chosenToken){
+const printTokenP2 = (chosenToken) => {
+    switch (chosenToken){
     
-            case "token1P2":
-                console.log("ficha4")
-                return "e";
+        case "token1P2":
+            console.log("ficha4")
+            return "e";
     
-            case "token2P2":
-                console.log("ficha5")
-                return "k";
+        case "token2P2":
+            console.log("ficha5")
+            return "k";
     
-            case "token3P2":
-                console.log("ficha6")
-                return "f";
-        };
+        case "token3P2":
+            console.log("ficha6")
+            return "f";
+    };
 
     // const result = {
     //     token1P1: "e",
