@@ -205,18 +205,21 @@ const intentarGanar = () => {
             console.log([pos3])
             // reprodAudio ();
             tablero[pos3].innerHTML = printTokenP2(tokenselectP2);
+            tablero[pos3].classList.add("colorP2");
             miTablero[pos3] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos1] === "O" && miTablero[pos3] === "O" && miTablero[pos2] === "" && miTablero[pos1]){
             console.log("Aquí te puedo ganar", miTablero[pos2]);
             console.log([pos2])
             tablero[pos2].innerHTML = printTokenP2(tokenselectP2);
+            tablero[pos2].classList.add("colorP2");
             miTablero[pos2] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos2] === "O" && miTablero[pos3] === "O" && miTablero[pos1] === "" && miTablero[pos2]){
             console.log("Aquí te puedo ganar", miTablero[pos1]);
             console.log([pos1])
             tablero[pos1].innerHTML = printTokenP2(tokenselectP2);
+            tablero[pos1].classList.add("colorP2");
             miTablero[pos1] = "O"
             fichacpu = true
         } else {
@@ -236,18 +239,21 @@ const intentarGanar2 = () => {
             console.log([pos3])
             // reprodAudio ();
             tablero[pos3].innerHTML = printTokenP1(tokenselectP1);
+            tablero[pos3].classList.add("colorP1");
             miTablero[pos3] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos1] === "O" && miTablero[pos3] === "O" && miTablero[pos2] === "" && miTablero[pos1]){
             console.log("Aquí te puedo ganar", miTablero[pos2]);
             console.log([pos2])
             tablero[pos2].innerHTML = printTokenP1(tokenselectP1);
+            tablero[pos2].classList.add("colorP1");
             miTablero[pos2] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos2] === "O" && miTablero[pos3] === "O" && miTablero[pos1] === "" && miTablero[pos2]){
             console.log("Aquí te puedo ganar", miTablero[pos1]);
             console.log([pos1])
             tablero[pos1].innerHTML = printTokenP1(tokenselectP1);
+            tablero[pos1].classList.add("colorP1");
             miTablero[pos1] = "O"
             fichacpu = true
         } else {
@@ -267,18 +273,21 @@ const evitarGanador = () => {
             console.log([pos3])
             // reprodAudio ();
             tablero[pos3].innerHTML = printTokenP2(tokenselectP2);
+            tablero[pos3].classList.add("colorP2");
             miTablero[pos3] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos1] === "X" && miTablero[pos3] === "X" && miTablero[pos2] === "" && miTablero[pos1]){
             console.log("Aquí me puedes ganar", miTablero[pos2]);
             console.log([pos2])
             tablero[pos2].innerHTML = printTokenP2(tokenselectP2);
+            tablero[pos2].classList.add("colorP2");
             miTablero[pos2] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos2] === "X" && miTablero[pos3] === "X" && miTablero[pos1] === "" && miTablero[pos2]){
             console.log("Aquí me puedes ganar", miTablero[pos1]);
             console.log([pos1])
             tablero[pos1].innerHTML = printTokenP2(tokenselectP2);
+            tablero[pos1].classList.add("colorP2");
             miTablero[pos1] = "O"
             fichacpu = true
         } else {
@@ -298,18 +307,21 @@ const evitarGanador2 = () => {
             console.log([pos3])
             // reprodAudio ();
             tablero[pos3].innerHTML = printTokenP1(tokenselectP1);
+            tablero[pos3].classList.add("colorP1");
             miTablero[pos3] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos1] === "X" && miTablero[pos3] === "X" && miTablero[pos2] === "" && miTablero[pos1]){
             console.log("Aquí me puedes ganar", miTablero[pos2]);
             console.log([pos2])
             tablero[pos2].innerHTML = printTokenP1(tokenselectP1);
+            tablero[pos2].classList.add("colorP1");
             miTablero[pos2] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos2] === "X" && miTablero[pos3] === "X" && miTablero[pos1] === "" && miTablero[pos2]){
             console.log("Aquí me puedes ganar", miTablero[pos1]);
             console.log([pos1])
             tablero[pos1].innerHTML = printTokenP1(tokenselectP1);
+            tablero[pos1].classList.add("colorP1");
             miTablero[pos1] = "O"
             fichacpu = true
         } else {
@@ -328,6 +340,7 @@ const jugadaCpu = () => {
             aleatorio = tablero[Math.floor(Math.random() * tablero.length)]
         }
         aleatorio.innerHTML = printTokenP2(tokenselectP2);
+        aleatorio.classList.add("colorP2");
         miTablero[aleatorio.id] = "O";
         fichacpu = true
     }
@@ -342,6 +355,7 @@ const jugadaCpu2 = () => {
             aleatorio = tablero[Math.floor(Math.random() * tablero.length)]
         }
         aleatorio.innerHTML = printTokenP1(tokenselectP1);
+        aleatorio.classList.add("colorP1");
         miTablero[aleatorio.id] = "O";
         fichacpu = true
     }
@@ -403,6 +417,12 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Player"){
                     const tokenselectP2 = sessionStorage.getItem('tokenChosenP2')
                     
                     celda.innerHTML = (turno) ? printTokenP1(tokenselectP1) : printTokenP2(tokenselectP2);
+                    
+                    if (turno == true){
+                        celda.classList.add("colorP1")
+                    } else {
+                        celda.classList.add("colorP2")
+                    }
 
                     (turno) ? fichaP1-- : fichaP2--;
 
@@ -466,6 +486,7 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
 
                     
                     celda.innerHTML = printTokenP1(tokenselectP1);
+                    celda.classList.add("colorP1");
                     
                     fichaP1--;
                     fichasPlayer1.innerHTML = `Fichas: ${fichaP1}`
@@ -535,6 +556,7 @@ if (typeP1pl === "p1Cpu" && typeP2pl === "p2Player"){
                 if((celda.innerHTML === "") && (fichaP1 > 0)){
                     
                     celda.innerHTML = printTokenP2(tokenselectP2);
+                    celda.classList.add("colorP2");
                     
                     fichaP1-- ;
     
