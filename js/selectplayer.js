@@ -42,6 +42,11 @@ button.addEventListener("click", ()=>{
         return;
     }
 
+    if ((sessionStorage.getItem("tokenChosenP1") === null) || (sessionStorage.getItem("tokenChosenP2") === null)){
+        console.log("Debes elegir una ficha para cada jugador")
+        return;
+    }
+
     console.log(playerInputs);
     
     sessionStorage.setItem("usuario", JSON.stringify(playerInputs));

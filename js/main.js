@@ -621,13 +621,13 @@ contadTurnosP2.innerHTML = `Turnos: ${contadorTurnosP2}`
 //     }[type];
 // }
 
-function getToken(type){
-    return {
-        'token1P1': "a",
-        'token2P1': "c",
-        'token3P1': "K",
-        'token1P2': "e",
-        'token2P2': "k",
-        'token3P2': "f"
-    }[type] || "a"; 
-}
+// function getToken(type){
+//     return {
+//         'token1P1': "a",
+//         'token2P1': "c",
+//         'token3P1': "K",
+//         'token1P2': "e",
+//         'token2P2': "k",
+//         'token3P2': "f"
+//     }[type] || "a"; 
+// }
