@@ -26,6 +26,42 @@ let combinacionGanadora = [
     [2, 4, 6],
 ];
 
+// SELECTED TOKENS
+
+const printTokenP1 = (chosenToken) => {
+    switch (chosenToken){
+
+        case "token1P1":
+            console.log("ficha1")
+            return "a";
+
+        case "token2P1":
+            console.log("ficha2")
+            return "c";
+
+        case "token3P1":
+            console.log("ficha3")
+            return "K";
+    };
+}
+
+const printTokenP2 = (chosenToken) => {
+    switch (chosenToken){
+    
+        case "token1P2":
+            console.log("ficha4")
+            return "e";
+    
+        case "token2P2":
+            console.log("ficha5")
+            return "k";
+    
+        case "token3P2":
+            console.log("ficha6")
+            return "f";
+    };
+}
+
 const marcadorTurno = () => {
 
     if (turno == true) {
@@ -168,19 +204,19 @@ const intentarGanar = () => {
             console.log("Aquí te puedo ganar");
             console.log([pos3])
             // reprodAudio ();
-            tablero[pos3].innerHTML = "O";
+            tablero[pos3].innerHTML = printTokenP2(tokenselectP2);
             miTablero[pos3] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos1] === "O" && miTablero[pos3] === "O" && miTablero[pos2] === "" && miTablero[pos1]){
             console.log("Aquí te puedo ganar", miTablero[pos2]);
             console.log([pos2])
-            tablero[pos2].innerHTML = "O";
+            tablero[pos2].innerHTML = printTokenP2(tokenselectP2);
             miTablero[pos2] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos2] === "O" && miTablero[pos3] === "O" && miTablero[pos1] === "" && miTablero[pos2]){
             console.log("Aquí te puedo ganar", miTablero[pos1]);
             console.log([pos1])
-            tablero[pos1].innerHTML = "O";
+            tablero[pos1].innerHTML = printTokenP2(tokenselectP2);
             miTablero[pos1] = "O"
             fichacpu = true
         } else {
@@ -199,19 +235,19 @@ const evitarGanador = () => {
             console.log("Aquí me puedes ganar");
             console.log([pos3])
             // reprodAudio ();
-            tablero[pos3].innerHTML = "O";
+            tablero[pos3].innerHTML = printTokenP2(tokenselectP2);
             miTablero[pos3] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos1] === "X" && miTablero[pos3] === "X" && miTablero[pos2] === "" && miTablero[pos1]){
             console.log("Aquí me puedes ganar", miTablero[pos2]);
             console.log([pos2])
-            tablero[pos2].innerHTML = "O";
+            tablero[pos2].innerHTML = printTokenP2(tokenselectP2);
             miTablero[pos2] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos2] === "X" && miTablero[pos3] === "X" && miTablero[pos1] === "" && miTablero[pos2]){
             console.log("Aquí me puedes ganar", miTablero[pos1]);
             console.log([pos1])
-            tablero[pos1].innerHTML = "O";
+            tablero[pos1].innerHTML = printTokenP2(tokenselectP2);
             miTablero[pos1] = "O"
             fichacpu = true
         } else {
@@ -229,7 +265,7 @@ const jugadaCpu = () => {
         while (aleatorio.innerHTML !== ""){
             aleatorio = tablero[Math.floor(Math.random() * tablero.length)]
         }
-        aleatorio.innerHTML = "O";
+        aleatorio.innerHTML = printTokenP2(tokenselectP2);
         miTablero[aleatorio.id] = "O";
         fichacpu = true
     }
@@ -240,7 +276,7 @@ const robarCpu = () => {
     if (contadorTurnosP1 > 3){
         console.log ("Debería de quitar una ficha")
         let aleatorio = tablero[Math.floor(Math.random() * tablero.length)];
-        while (aleatorio.innerHTML !== "O"){
+        while (aleatorio.innerHTML !== printTokenP2(tokenselectP2)){
             aleatorio = tablero[Math.floor(Math.random() * tablero.length)]
         }
         console.log("Voy a robar esta ficha");
@@ -255,7 +291,7 @@ const robarCpu2 = () => {
     if (contadorTurnosP1 > 2){
         console.log ("Debería de quitar una ficha")
         let aleatorio = tablero[Math.floor(Math.random() * tablero.length)];
-        while (aleatorio.innerHTML !== "O"){
+        while (aleatorio.innerHTML !== printTokenP2(tokenselectP2)){
             aleatorio = tablero[Math.floor(Math.random() * tablero.length)]
         }
         console.log("Voy a robar esta ficha");
@@ -354,7 +390,7 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
                     // console.log(tokenselectP2)
 
                     
-                    celda.innerHTML = getTokenP1(tokenselectP1);
+                    celda.innerHTML = printTokenP1(tokenselectP1);
                     
                     fichaP1--;
                     fichasPlayer1.innerHTML = `Fichas: ${fichaP1}`
@@ -382,7 +418,7 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
                     comprueboGanador();
     
                     // turno = !turno;
-                } else if ((celda.innerHTML !=="") && (fichaP1 === 0)){
+                } else if ((celda.innerHTML === printTokenP1(tokenselectP1)) && (fichaP1 === 0)){
                         celda.innerHTML = "";
                         fichaBorrada = true;
                         fichaP1++;
@@ -429,7 +465,7 @@ if (typeP1pl === "p1Cpu" && typeP2pl === "p2Player"){
                     // const tokenselectP2 = sessionStorage.getItem('tokenChosenP2')
                     // console.log(tokenselectP2)
                     
-                    celda.innerHTML = "X";
+                    celda.innerHTML = printTokenP1(tokenselectP1);
                     
                     fichaP1-- ;
     
@@ -444,27 +480,24 @@ if (typeP1pl === "p1Cpu" && typeP2pl === "p2Player"){
     
                     fichacpu = false;
     
-                    // while((celda.innerHTML === "") && (fichaP1 > 0) && fichacpu === false){
-                console.log('hola');
-                robarCpu2();
-    
-                intentarGanar ();
-                
-                evitarGanador ();
-                
-                jugadaCpu();
-                console.log('adios');
+                    console.log('hola');
+                    robarCpu2();
+        
+                    intentarGanar ();
+                    
+                    evitarGanador ();
+                    
+                    jugadaCpu();
+                    console.log('adios');
 
-                comprueboGanador();
-    
-            // }
+                    comprueboGanador();
     
                 } else if ((celda.innerHTML !=="") && (fichaP1 === 0)){
                 console.log('3');
     
-                        celda.innerHTML = "";
-                        fichaBorrada = true;
-                        fichaP1++;
+                    celda.innerHTML = "";
+                    fichaBorrada = true;
+                    fichaP1++;
     
                     miTablero[celda.id] = "";
                 }
@@ -499,61 +532,30 @@ contadTurnosP1.innerHTML = `Turnos: ${contadorTurnosP1}`
 let contadTurnosP2 = document.getElementById("turnosP2");
 contadTurnosP2.innerHTML = `Turnos: ${contadorTurnosP2}`
 
-// SELECTED TOKENS
 
-const printTokenP1 = (chosenToken) => {
-    switch (chosenToken){
+// function getTokenP1 (type){
+//     return {
+//         'token1P1': "a",
+//         'token2P1': "c",
+//         'token3P1': "K"
+//     }[type];
+// }
 
-        case "token1P1":
-            console.log("ficha1")
-            return "a";
+// function getTokenP2 (type){
+//     return {
+//         'token1P2': "e",
+//         'token2P2': "k",
+//         'token3P2': "f"
+//     }[type];
+// }
 
-        case "token2P1":
-            console.log("ficha2")
-            return "c";
-
-        case "token3P1":
-            console.log("ficha3")
-            return "K";
-    };
-}
-
-const printTokenP2 = (chosenToken) => {
-    switch (chosenToken){
-    
-        case "token1P2":
-            console.log("ficha4")
-            return "e";
-    
-        case "token2P2":
-            console.log("ficha5")
-            return "k";
-    
-        case "token3P2":
-            console.log("ficha6")
-            return "f";
-    };
-
-    // const result = {
-    //     token1P1: "e",
-    //     token2P1: "k" 
-    // }
-
-    // return result.chosenToken
-}
-
-function getTokenP1 (type){
+function getToken(type){
     return {
         'token1P1': "a",
         'token2P1': "c",
-        'token3P1': "K"
-    }[type];
-}
-
-function getTokenP2 (type){
-    return {
+        'token3P1': "K",
         'token1P2': "e",
         'token2P2': "k",
         'token3P2': "f"
-    }[type];
+    }[type] || "a"; 
 }
