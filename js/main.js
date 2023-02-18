@@ -32,15 +32,12 @@ const printTokenP1 = (chosenToken) => {
     switch (chosenToken){
 
         case "token1P1":
-            console.log("ficha1")
             return "a";
 
         case "token2P1":
-            console.log("ficha2")
             return "c";
 
         case "token3P1":
-            console.log("ficha3")
             return "K";
     };
 }
@@ -49,15 +46,12 @@ const printTokenP2 = (chosenToken) => {
     switch (chosenToken){
     
         case "token1P2":
-            console.log("ficha4")
             return "e";
     
         case "token2P2":
-            console.log("ficha5")
             return "k";
     
         case "token3P2":
-            console.log("ficha6")
             return "f";
     };
 }
@@ -201,23 +195,35 @@ const intentarGanar = () => {
         let [pos1, pos2, pos3] = conseguirCombinacion;
         
         if (fichacpu == false && miTablero[pos1] === "O" && miTablero[pos2] === "O" && miTablero[pos3] === "" && miTablero[pos1]){
-            console.log("Aquí te puedo ganar");
-            console.log([pos3])
+            let devilDialeg = document.getElementById("dialoguepala");
+            devilDialeg.innerHTML = "Acercad vuestro esbelto gollete para un afeitado muy apurado";
+            devilDialeg.classList.add("dialoguepala2");
+            setTimeout(()=>{
+                devilDialeg.classList.remove("dialoguepala2");
+            },5000);
             // reprodAudio ();
             tablero[pos3].innerHTML = printTokenP2(tokenselectP2);
             tablero[pos3].classList.add("colorP2");
             miTablero[pos3] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos1] === "O" && miTablero[pos3] === "O" && miTablero[pos2] === "" && miTablero[pos1]){
-            console.log("Aquí te puedo ganar", miTablero[pos2]);
-            console.log([pos2])
+            let devilDialeg = document.getElementById("dialoguepala");
+            devilDialeg.innerHTML = "Acercad vuestro esbelto gollete para un afeitado muy apurado";
+            devilDialeg.classList.add("dialoguepala2");
+            setTimeout(()=>{
+                devilDialeg.classList.remove("dialoguepala2");
+            },5000);
             tablero[pos2].innerHTML = printTokenP2(tokenselectP2);
             tablero[pos2].classList.add("colorP2");
             miTablero[pos2] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos2] === "O" && miTablero[pos3] === "O" && miTablero[pos1] === "" && miTablero[pos2]){
-            console.log("Aquí te puedo ganar", miTablero[pos1]);
-            console.log([pos1])
+            let devilDialeg = document.getElementById("dialoguepala");
+            devilDialeg.innerHTML = "Acercad vuestro esbelto gollete para un afeitado muy apurado";
+            devilDialeg.classList.add("dialoguepala2");
+            setTimeout(()=>{
+                devilDialeg.classList.remove("dialoguepala2");
+            },5000);
             tablero[pos1].innerHTML = printTokenP2(tokenselectP2);
             tablero[pos1].classList.add("colorP2");
             miTablero[pos1] = "O"
@@ -235,30 +241,45 @@ const intentarGanar2 = () => {
         let [pos1, pos2, pos3] = conseguirCombinacion;
         
         if (fichacpu == false && miTablero[pos1] === "O" && miTablero[pos2] === "O" && miTablero[pos3] === "" && miTablero[pos1]){
-            console.log("Aquí te puedo ganar");
-            console.log([pos3])
+            let devilDialeg = document.getElementById("dialoguedevil");
+            devilDialeg.innerHTML = "Hoy tu espada no morderá a diablo alguno";
+            devilDialeg.classList.add("dialoguedevil2");
+            setTimeout(()=>{
+                devilDialeg.classList.remove("dialoguedevil2");
+            },5000);
+            
             // reprodAudio ();
             tablero[pos3].innerHTML = printTokenP1(tokenselectP1);
             tablero[pos3].classList.remove("colorP2");
             tablero[pos3].classList.add("colorP1");
-            miTablero[pos3] = "O"
-            fichacpu = true
+            miTablero[pos3] = "X";
+            fichacpu = true;
+
         } else if (fichacpu == false && miTablero[pos1] === "O" && miTablero[pos3] === "O" && miTablero[pos2] === "" && miTablero[pos1]){
-            console.log("Aquí te puedo ganar", miTablero[pos2]);
+            let devilDialeg = document.getElementById("dialoguedevil");
+            devilDialeg.innerHTML = "Hoy tu espada no morderá a diablo alguno";
+            devilDialeg.classList.add("dialoguedevil2");
+            setTimeout(()=>{
+                devilDialeg.classList.remove("dialoguedevil2");
+            },5000);
             console.log([pos2])
             tablero[pos2].innerHTML = printTokenP1(tokenselectP1);
             tablero[pos2].classList.remove("colorP2");
             tablero[pos2].classList.add("colorP1");
-            miTablero[pos2] = "O"
-            fichacpu = true
+            miTablero[pos2] = "X"
+            fichacpu = true;
         } else if (fichacpu == false && miTablero[pos2] === "O" && miTablero[pos3] === "O" && miTablero[pos1] === "" && miTablero[pos2]){
-            console.log("Aquí te puedo ganar", miTablero[pos1]);
-            console.log([pos1])
+            let devilDialeg = document.getElementById("dialoguedevil");
+            devilDialeg.innerHTML = "Hoy tu espada no morderá a diablo alguno";
+            devilDialeg.classList.add("dialoguedevil2");
+            setTimeout(()=>{
+                devilDialeg.classList.remove("dialoguedevil2");
+            },5000);
             tablero[pos1].innerHTML = printTokenP1(tokenselectP1);
             tablero[pos1].classList.remove("colorP2");
             tablero[pos1].classList.add("colorP1");
-            miTablero[pos1] = "O"
-            fichacpu = true
+            miTablero[pos1] = "X"
+            fichacpu = true;
         } else {
             console.log("Por aquí no pasa nada");
             console.log(fichacpu)
@@ -272,23 +293,35 @@ const evitarGanador = () => {
         let [pos1, pos2, pos3] = EvitarCombinacion;
         
         if (fichacpu == false && miTablero[pos1] === "X" && miTablero[pos2] === "X" && miTablero[pos3] === "" && miTablero[pos1]){
-            console.log("Aquí me puedes ganar");
-            console.log([pos3])
+            let devilDialeg = document.getElementById("dialoguepala");
+            devilDialeg.innerHTML = "No parecéis tener prisa por volver a vuestra ardiente ratonera";
+            devilDialeg.classList.add("dialoguepala2");
+            setTimeout(()=>{
+                devilDialeg.classList.remove("dialoguepala2");
+            },5000);
             // reprodAudio ();
             tablero[pos3].innerHTML = printTokenP2(tokenselectP2);
             tablero[pos3].classList.add("colorP2");
             miTablero[pos3] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos1] === "X" && miTablero[pos3] === "X" && miTablero[pos2] === "" && miTablero[pos1]){
-            console.log("Aquí me puedes ganar", miTablero[pos2]);
-            console.log([pos2])
+            let devilDialeg = document.getElementById("dialoguepala");
+            devilDialeg.innerHTML = "No parecéis tener prisa por volver a vuestra ardiente ratonera";
+            devilDialeg.classList.add("dialoguepala2");
+            setTimeout(()=>{
+                devilDialeg.classList.remove("dialoguepala2");
+            },5000);
             tablero[pos2].innerHTML = printTokenP2(tokenselectP2);
             tablero[pos2].classList.add("colorP2");
             miTablero[pos2] = "O"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos2] === "X" && miTablero[pos3] === "X" && miTablero[pos1] === "" && miTablero[pos2]){
-            console.log("Aquí me puedes ganar", miTablero[pos1]);
-            console.log([pos1])
+            let devilDialeg = document.getElementById("dialoguepala");
+            devilDialeg.innerHTML = "No parecéis tener prisa por volver a vuestra ardiente ratonera";
+            devilDialeg.classList.add("dialoguepala2");
+            setTimeout(()=>{
+                devilDialeg.classList.remove("dialoguepala2");
+            },5000);
             tablero[pos1].innerHTML = printTokenP2(tokenselectP2);
             tablero[pos1].classList.add("colorP2");
             miTablero[pos1] = "O"
@@ -306,29 +339,41 @@ const evitarGanador2 = () => {
         let [pos1, pos2, pos3] = EvitarCombinacion;
         
         if (fichacpu == false && miTablero[pos1] === "X" && miTablero[pos2] === "X" && miTablero[pos3] === "" && miTablero[pos1]){
-            console.log("Aquí me puedes ganar");
-            console.log([pos3])
+            let devilDialeg = document.getElementById("dialoguedevil");
+            devilDialeg.innerHTML = "He visto aceros más sedientos de sangre y mentes más ágiles";
+            devilDialeg.classList.add("dialoguedevil2");
+            setTimeout(()=>{
+                devilDialeg.classList.remove("dialoguedevil2");
+            },5000);
             // reprodAudio ();
             tablero[pos3].innerHTML = printTokenP1(tokenselectP1);
             tablero[pos3].classList.remove("colorP2");
             tablero[pos3].classList.add("colorP1");
-            miTablero[pos3] = "O"
+            miTablero[pos3] = "X"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos1] === "X" && miTablero[pos3] === "X" && miTablero[pos2] === "" && miTablero[pos1]){
-            console.log("Aquí me puedes ganar", miTablero[pos2]);
-            console.log([pos2])
+            let devilDialeg = document.getElementById("dialoguedevil");
+            devilDialeg.innerHTML = "He visto aceros más sedientos de sangre y mentes más ágiles";
+            devilDialeg.classList.add("dialoguedevil2");
+            setTimeout(()=>{
+                devilDialeg.classList.remove("dialoguedevil2");
+            },5000);
             tablero[pos2].innerHTML = printTokenP1(tokenselectP1);
             tablero[pos2].classList.remove("colorP2");
             tablero[pos2].classList.add("colorP1");
-            miTablero[pos2] = "O"
+            miTablero[pos2] = "X"
             fichacpu = true
         } else if (fichacpu == false && miTablero[pos2] === "X" && miTablero[pos3] === "X" && miTablero[pos1] === "" && miTablero[pos2]){
-            console.log("Aquí me puedes ganar", miTablero[pos1]);
-            console.log([pos1])
+            let devilDialeg = document.getElementById("dialoguedevil");
+            devilDialeg.innerHTML = "He visto aceros más sedientos de sangre y mentes más ágiles";
+            devilDialeg.classList.add("dialoguedevil2");
+            setTimeout(()=>{
+                devilDialeg.classList.remove("dialoguedevil2");
+            },5000);
             tablero[pos1].innerHTML = printTokenP1(tokenselectP1);
             tablero[pos1].classList.remove("colorP2");
             tablero[pos1].classList.add("colorP1");
-            miTablero[pos1] = "O"
+            miTablero[pos1] = "X"
             fichacpu = true
         } else {
             console.log("Por aquí no pasa nada");
@@ -363,7 +408,7 @@ const jugadaCpu2 = () => {
         aleatorio.innerHTML = printTokenP1(tokenselectP1);
         aleatorio.classList.remove("colorP2");
         aleatorio.classList.add("colorP1");
-        miTablero[aleatorio.id] = "O";
+        miTablero[aleatorio.id] = "X";
         fichacpu = true
     }
 }
@@ -558,7 +603,6 @@ if (typeP1pl === "p1Cpu" && typeP2pl === "p2Player"){
                 console.log(tokenselectP2)
                 
                 jugadaCpu2();
-                console.log('adios');
     
             celda.addEventListener('click', ()=> {
 
@@ -569,7 +613,7 @@ if (typeP1pl === "p1Cpu" && typeP2pl === "p2Player"){
                     
                     fichaP1-- ;
     
-                    miTablero[celda.id] = "X";
+                    miTablero[celda.id] = "O";
     
                     fichaBorrada = false
     

@@ -37,6 +37,21 @@
     display: none;
 }
 
+.dialoguedevil {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "seagram";
+    font-size: x-large;
+    padding-bottom: 1em;
+}
+
+.dialoguedevil2 {
+    visibility: visible;
+}
+
 .audioControls {
     opacity: 20%;
     width: 15vh;
@@ -272,6 +287,21 @@
     display: none;
 }
 
+.dialoguepala {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "seagram";
+    font-size: x-large;
+    padding-bottom: 1em;
+}
+
+.dialoguepala2 {
+    visibility: visible;
+}
+
 /* MEDIA QUERYS */
 
 @media (min-width: 576px) {
@@ -446,6 +476,28 @@
         width: 20vw;
     }
 
+    .dialoguedevil {
+        position: absolute;
+        height: 21vh;
+        width: 31vh;
+        background-color: aliceblue;
+        transform: translate(70%, -20%);
+        z-index: 11;
+        background: url(../img/Black_White_Speech_Bubble_PNG_wyqkbx.png);
+        background-size: cover;
+    }
+
+    .dialoguepala {
+        position: absolute;
+        height: 21vh;
+        width: 31vh;
+        background-color: aliceblue;
+        transform: translate(-130%, -80%);
+        z-index: 11;
+        background: url(../img/Black_White_Speech_Bubble_PNG_wyqkbx\ \(1\).png);
+        background-size: cover;
+    }
+
 }
 
 @media (min-width: 1400px) {
@@ -498,6 +550,20 @@
 
     .backbtn{
         width: 15vw;
+    }
+
+    .dialoguedevil {
+        position: absolute;
+        height: 21.5vh;
+        width: 31.5vh;
+        transform: translate(95%, -60%);
+    }
+
+    .dialoguepala {
+        position: absolute;
+        height: 21.5vh;
+        width: 31.5vh;
+        transform: translate(-155%, -100%);
     }
 
 }
