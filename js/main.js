@@ -26,6 +26,8 @@ let combinacionGanadora = [
     [2, 4, 6],
 ];
 
+// FUNCIONES
+
 // SELECTED TOKENS
 
 const printTokenP1 = (chosenToken) => {
@@ -56,6 +58,8 @@ const printTokenP2 = (chosenToken) => {
     };
 }
 
+// FUNCIONES DE TURNOS
+
 const marcadorTurno = () => {
 
     if (turno == true) {
@@ -72,20 +76,19 @@ const contadorTurnos = () => {
 
     if (turno){
         contadorTurnosP1++
-        console.log(contadorTurnosP1)
         contadTurnosP1.innerHTML = `Turnos: ${contadorTurnosP1}`
         sessionStorage.setItem("turnosP1", (contadorTurnosP1));
     } else {
         contadorTurnosP2++
-        console.log(contadorTurnosP2)
         contadTurnosP2.innerHTML = `Turnos: ${contadorTurnosP2}`
         sessionStorage.setItem("turnosP2", (contadorTurnosP2));
     }
 
 }
 
+// FUNCIONES PARA EL GANADOR
+
 const winnerP1 = () => {
-    console.log("Ha ganado X");
     sessionStorage.setItem("winner", "X");
     document.getElementById("boardt").classList.add("boardflicker")
     setTimeout(()=>{
@@ -94,7 +97,6 @@ const winnerP1 = () => {
 }
 
 const winnerP2 = () => {
-    console.log("Ha ganado O");
     sessionStorage.setItem("winner", "O");
     document.getElementById("boardt").classList.add("boardflicker2")
     setTimeout(()=>{
@@ -106,7 +108,6 @@ const comprueboGanador = () => {
     console.log(miTablero);
 
     if (miTablero[0] === miTablero[1] && miTablero [0] === miTablero [2] && miTablero[0] !== ""){
-        console.log("Has ganado!");
         juegoTerminado = true;
 
         if (miTablero[0] === "X"){
@@ -116,7 +117,6 @@ const comprueboGanador = () => {
         }
         
     } else if (miTablero[3] === miTablero[4] && miTablero [3] === miTablero [5] && miTablero[3]){
-        console.log("Has ganado!");
         juegoTerminado = true;
 
         if (miTablero[3] === "X"){
@@ -126,7 +126,6 @@ const comprueboGanador = () => {
         }
 
     } else if (miTablero[6] === miTablero[7] && miTablero [6] === miTablero [8] && miTablero[6]){
-        console.log("Has ganado!");
         juegoTerminado = true;
 
         if (miTablero[6] === "X"){
@@ -136,7 +135,6 @@ const comprueboGanador = () => {
         }
 
     } else if (miTablero[0] === miTablero[3] && miTablero [0] === miTablero [6] && miTablero[0]){
-        console.log("Has ganado!");
         juegoTerminado = true;
 
         if (miTablero[0] === "X"){
@@ -146,7 +144,6 @@ const comprueboGanador = () => {
         }
 
     } else if (miTablero[1] === miTablero[4] && miTablero [1] === miTablero [7] && miTablero[1]){
-        console.log("Has ganado!");
         juegoTerminado = true;
 
         if (miTablero[1] === "X"){
@@ -156,7 +153,6 @@ const comprueboGanador = () => {
         }
 
     } else if (miTablero[2] === miTablero[5] && miTablero [2] === miTablero [8] && miTablero[2]){
-        console.log("Has ganado!");
         juegoTerminado = true;
 
         if (miTablero[2] === "X"){
@@ -166,7 +162,6 @@ const comprueboGanador = () => {
         }
 
     } else if (miTablero[0] === miTablero[4] && miTablero [0] === miTablero [8] && miTablero[0]){
-        console.log("Has ganado!");
         juegoTerminado = true;
 
         if (miTablero[0] === "X"){
@@ -176,7 +171,6 @@ const comprueboGanador = () => {
         }
 
     } else if (miTablero[2] === miTablero[4] && miTablero [2] === miTablero [6] && miTablero[2]){
-        console.log("Has ganado!");
         juegoTerminado = true;
 
         if (miTablero[2] === "X"){
@@ -189,8 +183,10 @@ const comprueboGanador = () => {
 
 }
 
+// FUNCIONES PARTIDA CPU
+
 const intentarGanar = () => {
-    console.log("Te voy a ganar")
+
     combinacionGanadora.map(conseguirCombinacion => {
         let [pos1, pos2, pos3] = conseguirCombinacion;
         
@@ -201,7 +197,6 @@ const intentarGanar = () => {
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguepala2");
             },5000);
-            // reprodAudio ();
             tablero[pos3].innerHTML = printTokenP2(tokenselectP2);
             tablero[pos3].classList.add("colorP2");
             miTablero[pos3] = "O"
@@ -228,10 +223,7 @@ const intentarGanar = () => {
             tablero[pos1].classList.add("colorP2");
             miTablero[pos1] = "O"
             fichacpu = true
-        } else {
-            console.log("Por aquí no pasa nada");
-            console.log(fichacpu)
-        }
+        } else {}
     })
 }
 
@@ -247,8 +239,6 @@ const intentarGanar2 = () => {
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguedevil2");
             },5000);
-            
-            // reprodAudio ();
             tablero[pos3].innerHTML = printTokenP1(tokenselectP1);
             tablero[pos3].classList.remove("colorP2");
             tablero[pos3].classList.add("colorP1");
@@ -262,7 +252,6 @@ const intentarGanar2 = () => {
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguedevil2");
             },5000);
-            console.log([pos2])
             tablero[pos2].innerHTML = printTokenP1(tokenselectP1);
             tablero[pos2].classList.remove("colorP2");
             tablero[pos2].classList.add("colorP1");
@@ -280,10 +269,7 @@ const intentarGanar2 = () => {
             tablero[pos1].classList.add("colorP1");
             miTablero[pos1] = "X"
             fichacpu = true;
-        } else {
-            console.log("Por aquí no pasa nada");
-            console.log(fichacpu)
-        }
+        } else {}
     })
 }
 
@@ -299,7 +285,6 @@ const evitarGanador = () => {
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguepala2");
             },5000);
-            // reprodAudio ();
             tablero[pos3].innerHTML = printTokenP2(tokenselectP2);
             tablero[pos3].classList.add("colorP2");
             miTablero[pos3] = "O"
@@ -326,15 +311,12 @@ const evitarGanador = () => {
             tablero[pos1].classList.add("colorP2");
             miTablero[pos1] = "O"
             fichacpu = true
-        } else {
-            console.log("Por aquí no pasa nada");
-            console.log(fichacpu)
-        }
+        } else {}
     })
 }
 
 const evitarGanador2 = () => {
-    console.log("Voy a evitar que ganes")
+
     combinacionGanadora.map(EvitarCombinacion => {
         let [pos1, pos2, pos3] = EvitarCombinacion;
         
@@ -345,7 +327,6 @@ const evitarGanador2 = () => {
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguedevil2");
             },5000);
-            // reprodAudio ();
             tablero[pos3].innerHTML = printTokenP1(tokenselectP1);
             tablero[pos3].classList.remove("colorP2");
             tablero[pos3].classList.add("colorP1");
@@ -375,10 +356,7 @@ const evitarGanador2 = () => {
             tablero[pos1].classList.add("colorP1");
             miTablero[pos1] = "X"
             fichacpu = true
-        } else {
-            console.log("Por aquí no pasa nada");
-            console.log(fichacpu)
-        }
+        } else {}
     })
 }
 
@@ -386,7 +364,6 @@ const jugadaCpu = () => {
     
     if (fichacpu == false){
         let aleatorio = tablero[Math.floor(Math.random() * tablero.length)];
-        console.log (aleatorio)
         while (aleatorio.innerHTML !== ""){
             aleatorio = tablero[Math.floor(Math.random() * tablero.length)]
         }
@@ -401,7 +378,6 @@ const jugadaCpu2 = () => {
     
     if (fichacpu == false){
         let aleatorio = tablero[Math.floor(Math.random() * tablero.length)];
-        console.log (aleatorio)
         while (aleatorio.innerHTML !== ""){
             aleatorio = tablero[Math.floor(Math.random() * tablero.length)]
         }
@@ -415,12 +391,10 @@ const jugadaCpu2 = () => {
 
 const robarCpu = () => {
     if (contadorTurnosP1 > 3){
-        console.log ("Debería de quitar una ficha")
         let aleatorio = tablero[Math.floor(Math.random() * tablero.length)];
         while (aleatorio.innerHTML !== printTokenP2(tokenselectP2)){
             aleatorio = tablero[Math.floor(Math.random() * tablero.length)]
         }
-        console.log("Voy a robar esta ficha");
         aleatorio.innerHTML = "";
         miTablero[aleatorio.id] = "";
         console.log(aleatorio);
@@ -430,18 +404,18 @@ const robarCpu = () => {
 
 const robarCpu2 = () => {
     if (contadorTurnosP2 > 2){
-        console.log ("Debería de quitar una ficha")
         let aleatorio = tablero[Math.floor(Math.random() * tablero.length)];
         while (aleatorio.innerHTML !== printTokenP1(tokenselectP1)){
             aleatorio = tablero[Math.floor(Math.random() * tablero.length)]
         }
-        console.log("Voy a robar esta ficha");
         aleatorio.innerHTML = "";
         miTablero[aleatorio.id] = "";
         console.log(aleatorio);
         fichaP2++;
     }
 }
+
+// VARIABLES DE TIPO DE JUGADOR Y DE TOKEN
 
 let typeP1pl = sessionStorage.getItem('typePlayerChosenP1')
 let typeP2pl = sessionStorage.getItem('typePlayerChosenP2')
@@ -451,6 +425,10 @@ console.log(typeP2pl === "p2layer");
 
 const tokenselectP1 = sessionStorage.getItem('tokenChosenP1')
 const tokenselectP2 = sessionStorage.getItem('tokenChosenP2')
+
+// TIPOS DE JUEGO
+
+// PLAYER VS PLAYER
 
 if (typeP1pl === "p1Player" && typeP2pl === "p2Player"){
 
@@ -513,7 +491,7 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Player"){
 
                         fichasPlayer2.innerHTML = `Fichas: ${fichaP2}`
 
-                        }
+                    }
 
                     miTablero[celda.id] = "";
                 }
@@ -522,6 +500,8 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Player"){
     )
 
 }
+
+// PLAYER VS CPU
 
 if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
     
@@ -532,11 +512,6 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
                 if (juegoTerminado) return;
     
                 if((celda.innerHTML === "") && (fichaP1 > 0)){
-
-                    // const tokenselectP1 = sessionStorage.getItem('tokenChosenP1')
-                    // const tokenselectP2 = sessionStorage.getItem('tokenChosenP2')
-                    // console.log(tokenselectP2)
-
                     
                     celda.innerHTML = printTokenP1(tokenselectP1);
                     celda.classList.remove("colorP2")
@@ -546,7 +521,6 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
                     fichasPlayer1.innerHTML = `Fichas: ${fichaP1}`
 
                     contadorTurnosP1++
-                    console.log(contadorTurnosP1)
                     contadTurnosP1.innerHTML = `Turnos: ${contadorTurnosP1}`
                     sessionStorage.setItem("turnosP1", (contadorTurnosP1));
     
@@ -589,6 +563,8 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
     )
 
 }
+
+// CPU VS PLAYER
 
 if (typeP1pl === "p1Cpu" && typeP2pl === "p2Player"){
 
@@ -685,21 +661,7 @@ let contadTurnosP2 = document.getElementById("turnosP2");
 contadTurnosP2.innerHTML = `Turnos: ${contadorTurnosP2}`
 
 
-// function getTokenP1 (type){
-//     return {
-//         'token1P1': "a",
-//         'token2P1': "c",
-//         'token3P1': "K"
-//     }[type];
-// }
-
-// function getTokenP2 (type){
-//     return {
-//         'token1P2': "e",
-//         'token2P2': "k",
-//         'token3P2': "f"
-//     }[type];
-// }
+// FUNCION DE SELECCIÓN DE FICHAS MÁS ELEGANTE
 
 // function getToken(type){
 //     return {

@@ -24,6 +24,8 @@ inputsCapturados.map(
     }
 )
 
+// PLAY GAME BUTTON
+
 button.addEventListener("click", ()=>{
 
     if( (playerInputs.player1 === "") || (playerInputs.player2 === "")){
@@ -85,6 +87,8 @@ button.addEventListener("click", ()=>{
     window.open("../pages/boardgame.html","_self")
 
 })
+
+// RESET CHOICES BUTTON
 
 button2.addEventListener("click", ()=>{
     sessionStorage.clear();

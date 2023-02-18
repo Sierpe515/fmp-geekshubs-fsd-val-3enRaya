@@ -8,8 +8,13 @@
     <link rel="stylesheet" href="../css/selectplayer.css">
 </head>
 <body>
+    <!-- PRINCIPAL CONTAINER -->
     <div class="container-fluid bigcontainer">
+
+        <!-- DEVIL AREA -->
         <div class="colp1">
+
+            <!-- DEVIL TOKENS -->
             <div class="p1token">
                 <div class="p1SelectTokens p2SelectTokensTitle textflicker">Choose your token:</div>
                 <div class="p1SelectTokens" onclick="chooseToken1('token1P1')"><p id="token1P1" class="tokenP">a</p></div>
@@ -19,6 +24,8 @@
                     <audio class="audioControls" autoplay controls src="../audio/Diablo 1 [OST] - 02 - Town (152kbit_Opus).opus"></audio>
                 </div>
             </div>
+
+            <!-- DEVIL INFO -->
             <div class="p1gif">
                 <p class="nameTitle">Devil</p>
                 <input id="player1" class="namePlayer" name="player1" type="text" maxlength="10" placeholder="Introduce tu nombre">
@@ -29,6 +36,8 @@
                 <img class="selectgif" src="../img/WHfW.gif" alt="devilgif">
             </div>
         </div>
+
+        <!-- BUTTONS AREA -->
         <div class="colselect">
             <div class="textalert" id="textal"></div>
             <div class="selectbtn" id="button"> Play  
@@ -38,7 +47,11 @@
                 <img class="pentagramgif" src="../img/demon-neon.gif" alt="pentagramgif"> 
             Choices </div>
         </div>
+
+        <!-- PALADIN AREA -->
         <div class="colp2">
+
+            <!-- PALADIN INFO -->
             <div class="p2gif">
                 <p class="nameTitle">Paladin</p>
                 <input id="player2" class="namePlayer" name="player2" type="text" maxlength="10" placeholder="Introduce tu nombre">
@@ -48,19 +61,14 @@
                 </div>
                 <img class="selectgif" src="../img/MfdI.gif" alt="palagif">
             </div>
+
+            <!-- PALADIN TOKENS -->
             <div class="p2token">
                 <div class="p2SelectTokens p2SelectTokensTitle textflicker">Choose your token:</div>
                 <div class="p2SelectTokens" onclick="chooseToken2('token1P2')"><p id="token1P2" class="tokenP">e</p></div>
                 <div class="p2SelectTokens" onclick="chooseToken2('token2P2')"><p id="token2P2" class="tokenP">k</p></div>
                 <div class="p2SelectTokens" onclick="chooseToken2('token3P2')"><p id="token3P2" class="tokenP">f</p></div>
                 <div class="p2SelectTokens"></div>
-                <!-- <div class="p2SelectTokens p2SelectTokensTitle textflicker">Choose your token:</div>
-                <div class="p2SelectTokens" onclick="chooseToken2('token1P2')"><p id="token1P2" class="tokenP">a</p></div>
-                <div class="p2SelectTokens" onclick="chooseToken2('token2P2')"><p id="token2P2" class="tokenP">c</p></div>
-                <div class="p2SelectTokens" onclick="chooseToken2('token3P2')"><p id="token3P2" class="tokenP">K</p></div>
-                <div class="p2SelectTokens">
-                    <audio class="audioControls" autoplay controls src="../audio/Diablo 1 [OST] - 02 - Town (152kbit_Opus).opus"></audio>
-                </div> -->
             </div>
         </div>
     </div>

@@ -13,6 +13,5 @@ let token3 = new TokenPl1("token3P1");
 let tokensP1 = {
     "token1P1" : token1,
     "token2P1" : token2,
-    "token3P1" : token3,
-    
+    "token3P1" : token3,  
 }

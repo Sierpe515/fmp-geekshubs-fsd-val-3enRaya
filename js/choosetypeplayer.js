@@ -6,17 +6,13 @@ const chooseTypePl1 = (typeChosen) =>{
     if(!typeP1){
         
         typeP1 = typesBtn[typeChosen];
-        // console.log(typeChosen)
-        // document.getElementById(typeChosen).onclick = null;
+
         let typeP1Selected = document.getElementById(typeChosen);
             typeP1Selected.onclick = null;
             typeP1Selected.classList.add("tyP1Selected");
-        // fbtnsP1.classList.add("selectedTokenP1");
-        // Para añadir clase al elemento y cambiarle el bgcolor?
 
         console.log(typeP1)
         sessionStorage.setItem("typePlayerChosenP1", typeChosen)
-        //Aqui deshabilitaremos los token del player1
 
         let btnsP1 = Array.from(document.getElementsByClassName("typeBtnP1"));
 

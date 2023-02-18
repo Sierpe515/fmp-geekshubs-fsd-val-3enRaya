@@ -14,7 +14,6 @@ const chooseToken1 = (tokenChosen) => {
             
             console.log(tokenP1)
             sessionStorage.setItem("tokenChosenP1", tokenChosen)
-            //Aqui deshabilitaremos los token del player1
 
             let fichasp1 = Array.from(document.getElementsByClassName("p1SelectTokens"));
 
@@ -34,7 +33,6 @@ const chooseToken2 = (tokenChosen) => {
         let tokenP2Selected = document.getElementById(tokenChosen);
             tokenP2Selected.onclick = null;
             tokenP2Selected.classList.add("tP2Selected");
-        // document.getElementById(tokenChosen).classList.add("selectedTokenP1");
 
         console.log(tokenP2)
         sessionStorage.setItem("tokenChosenP2", tokenChosen)
