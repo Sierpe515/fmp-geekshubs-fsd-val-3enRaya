@@ -239,6 +239,7 @@ const intentarGanar2 = () => {
             console.log([pos3])
             // reprodAudio ();
             tablero[pos3].innerHTML = printTokenP1(tokenselectP1);
+            tablero[pos3].classList.remove("colorP2");
             tablero[pos3].classList.add("colorP1");
             miTablero[pos3] = "O"
             fichacpu = true
@@ -246,6 +247,7 @@ const intentarGanar2 = () => {
             console.log("Aquí te puedo ganar", miTablero[pos2]);
             console.log([pos2])
             tablero[pos2].innerHTML = printTokenP1(tokenselectP1);
+            tablero[pos2].classList.remove("colorP2");
             tablero[pos2].classList.add("colorP1");
             miTablero[pos2] = "O"
             fichacpu = true
@@ -253,6 +255,7 @@ const intentarGanar2 = () => {
             console.log("Aquí te puedo ganar", miTablero[pos1]);
             console.log([pos1])
             tablero[pos1].innerHTML = printTokenP1(tokenselectP1);
+            tablero[pos1].classList.remove("colorP2");
             tablero[pos1].classList.add("colorP1");
             miTablero[pos1] = "O"
             fichacpu = true
@@ -307,6 +310,7 @@ const evitarGanador2 = () => {
             console.log([pos3])
             // reprodAudio ();
             tablero[pos3].innerHTML = printTokenP1(tokenselectP1);
+            tablero[pos3].classList.remove("colorP2");
             tablero[pos3].classList.add("colorP1");
             miTablero[pos3] = "O"
             fichacpu = true
@@ -314,6 +318,7 @@ const evitarGanador2 = () => {
             console.log("Aquí me puedes ganar", miTablero[pos2]);
             console.log([pos2])
             tablero[pos2].innerHTML = printTokenP1(tokenselectP1);
+            tablero[pos2].classList.remove("colorP2");
             tablero[pos2].classList.add("colorP1");
             miTablero[pos2] = "O"
             fichacpu = true
@@ -321,6 +326,7 @@ const evitarGanador2 = () => {
             console.log("Aquí me puedes ganar", miTablero[pos1]);
             console.log([pos1])
             tablero[pos1].innerHTML = printTokenP1(tokenselectP1);
+            tablero[pos1].classList.remove("colorP2");
             tablero[pos1].classList.add("colorP1");
             miTablero[pos1] = "O"
             fichacpu = true
@@ -355,6 +361,7 @@ const jugadaCpu2 = () => {
             aleatorio = tablero[Math.floor(Math.random() * tablero.length)]
         }
         aleatorio.innerHTML = printTokenP1(tokenselectP1);
+        aleatorio.classList.remove("colorP2");
         aleatorio.classList.add("colorP1");
         miTablero[aleatorio.id] = "O";
         fichacpu = true
@@ -419,9 +426,10 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Player"){
                     celda.innerHTML = (turno) ? printTokenP1(tokenselectP1) : printTokenP2(tokenselectP2);
                     
                     if (turno == true){
-                        celda.classList.add("colorP1")
+                        celda.classList.remove("colorP2");
+                        celda.classList.add("colorP1");
                     } else {
-                        celda.classList.add("colorP2")
+                        celda.classList.add("colorP2");
                     }
 
                     (turno) ? fichaP1-- : fichaP2--;
@@ -486,6 +494,7 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
 
                     
                     celda.innerHTML = printTokenP1(tokenselectP1);
+                    celda.classList.remove("colorP2")
                     celda.classList.add("colorP1");
                     
                     fichaP1--;
