@@ -97,19 +97,15 @@
     }
 }
 
-/* BUTTON START */
-
-.btn-start-box {
-    /* background-color: aliceblue; */
-}
+/* START BUTTON */
 
 .startbtn {
     position: absolute;
     transform: translate3d(-50%, -30%, 0);
     z-index: 3;
-    font-family: "";
+    font-family: "seagram";
     font-size: medium;
-    width: 130px;
+    width: 8em;
     background-color: rgba(240, 248, 255, 0);
     border: 0px solid;
 }
@@ -122,10 +118,7 @@
     background-color: rgba(240, 248, 255, 0.274);
     box-shadow: -5px -5px 20px rgb(197, 50, 5), 5px 5px 20px rgb(197, 50, 5), -5px -5px 20px rgb(197, 50, 5) inset, 5px 5px 20px rgb(197, 50, 5) inset;
 }
-/* 
-.startbtn:active {
-    background-color: darkred !important;
-} */
+
 
 /* PALADIN AREA */
 

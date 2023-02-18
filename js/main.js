@@ -602,10 +602,15 @@ if (typeP1pl === "p1Cpu" && typeP2pl === "p2Player"){
 
 }
 
-// RESET BUTTON
+// BUTTONS
 
 resetbtn.addEventListener("click", ()=>{
     window.open("../pages/boardgame.html","_self")
+})
+
+backbtn.addEventListener("click", ()=>{
+    sessionStorage.clear();
+    window.open("../pages/selectplayer.html","_self")
 })
 
 // INFO IN PLAYERS SQUARES

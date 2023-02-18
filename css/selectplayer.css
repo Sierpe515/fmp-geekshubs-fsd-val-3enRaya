@@ -183,6 +183,7 @@ input::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1em;
 }
 
 .selectbtn {
@@ -270,6 +271,29 @@ input::placeholder {
     z-index: 4;
 }
 
+/* TEXT ALERT */
+
+.textalert {
+    position: absolute;
+    width: 40vw;
+    height: 40vh;
+    background-color: rgba(240, 248, 255, 0.63);
+    border-radius: 10px;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "seagram";
+    text-align: center;
+    font-size: xxx-large;
+    text-shadow: 2px 0 rgb(197, 50, 5), -2px 0 rgb(197, 50, 5), 0 2px rgb(197, 50, 5), 0 -2px rgb(197, 50, 5),
+               1px 1px rgb(197, 50, 5), -1px -1px rgb(197, 50, 5), 1px -1px rgb(197, 50, 5), -1px 1px rgb(197, 50, 5);
+}
+
+.textalert1 {
+    visibility: visible;
+}
+
 @media (min-width: 576px) {
 
     .selectgif {
@@ -308,6 +332,14 @@ input::placeholder {
 
 }
 
+@media (min-width: 768px) {
+
+    .selectbtn {
+        width: 20vw;
+    }
+
+}
+
 @media (min-width: 992px) {
 
     input {
@@ -341,6 +373,21 @@ input::placeholder {
     .colselect {
         height: 100vh;
         width: 10vw;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .selectbtn {
+    background-color: black;
+    height: 4em;
+    width: 14vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px; 
+    font-family: "seagram";
+    color: white;
+    cursor: pointer;
     }
     
     .colp2 {
