@@ -287,8 +287,8 @@ input::placeholder {
 
 .textalert {
     position: absolute;
-    width: 40vw;
-    height: 40vh;
+    width: 80vw;
+    height: 80vh;
     background-color: rgba(240, 248, 255, 0.63);
     border-radius: 10px;
     visibility: hidden;
@@ -342,6 +342,10 @@ input::placeholder {
 
     .nameTitle{
         font-size: xx-large;
+    }
+
+    .textalert{
+        height: 40vh;
     }
 
 }
@@ -448,6 +452,12 @@ input::placeholder {
     }
 
     .nameTitle {
+        font-size: xxx-large;
+    }
+
+    .textalert {
+        width: 40vw;
+        height: 40vh;
         font-size: xxx-large;
     }
     
