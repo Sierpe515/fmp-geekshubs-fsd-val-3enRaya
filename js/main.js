@@ -1,3 +1,5 @@
+// VARIABLES
+
 let tablero = Array.from(document.getElementsByClassName("boardcell"));
 
 let turno = true;
@@ -197,6 +199,11 @@ const intentarGanar = () => {
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguepala2");
             },5000);
+            let palaNotice = document.getElementById("noticeTextPala");
+            palaNotice.classList.add("noticetextpalavisible");
+            setTimeout(()=>{
+                palaNotice.classList.remove("noticetextpalavisible");
+            },5000);
             tablero[pos3].innerHTML = printTokenP2(tokenselectP2);
             tablero[pos3].classList.add("colorP2");
             miTablero[pos3] = "O"
@@ -207,6 +214,11 @@ const intentarGanar = () => {
             devilDialeg.classList.add("dialoguepala2");
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguepala2");
+            },5000);
+            let palaNotice = document.getElementById("noticeTextPala");
+            palaNotice.classList.add("noticetextpalavisible");
+            setTimeout(()=>{
+                palaNotice.classList.remove("noticetextpalavisible");
             },5000);
             tablero[pos2].innerHTML = printTokenP2(tokenselectP2);
             tablero[pos2].classList.add("colorP2");
@@ -219,6 +231,11 @@ const intentarGanar = () => {
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguepala2");
             },5000);
+            let palaNotice = document.getElementById("noticeTextPala");
+            palaNotice.classList.add("noticetextpalavisible");
+            setTimeout(()=>{
+                palaNotice.classList.remove("noticetextpalavisible");
+            },5000);
             tablero[pos1].innerHTML = printTokenP2(tokenselectP2);
             tablero[pos1].classList.add("colorP2");
             miTablero[pos1] = "O"
@@ -228,7 +245,7 @@ const intentarGanar = () => {
 }
 
 const intentarGanar2 = () => {
-    console.log("Te voy a ganar")
+
     combinacionGanadora.map(conseguirCombinacion => {
         let [pos1, pos2, pos3] = conseguirCombinacion;
         
@@ -238,6 +255,11 @@ const intentarGanar2 = () => {
             devilDialeg.classList.add("dialoguedevil2");
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguedevil2");
+            },5000);
+            let devilNotice = document.getElementById("noticeTextDevil");
+            devilNotice.classList.add("noticetextdevilvisible");
+            setTimeout(()=>{
+                devilNotice.classList.remove("noticetextdevilvisible");
             },5000);
             tablero[pos3].innerHTML = printTokenP1(tokenselectP1);
             tablero[pos3].classList.remove("colorP2");
@@ -252,6 +274,11 @@ const intentarGanar2 = () => {
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguedevil2");
             },5000);
+            let devilNotice = document.getElementById("noticeTextDevil");
+            devilNotice.classList.add("noticetextdevilvisible");
+            setTimeout(()=>{
+                devilNotice.classList.remove("noticetextdevilvisible");
+            },5000);
             tablero[pos2].innerHTML = printTokenP1(tokenselectP1);
             tablero[pos2].classList.remove("colorP2");
             tablero[pos2].classList.add("colorP1");
@@ -263,6 +290,11 @@ const intentarGanar2 = () => {
             devilDialeg.classList.add("dialoguedevil2");
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguedevil2");
+            },5000);
+            let devilNotice = document.getElementById("noticeTextDevil");
+            devilNotice.classList.add("noticetextdevilvisible");
+            setTimeout(()=>{
+                devilNotice.classList.remove("noticetextdevilvisible");
             },5000);
             tablero[pos1].innerHTML = printTokenP1(tokenselectP1);
             tablero[pos1].classList.remove("colorP2");
@@ -285,6 +317,11 @@ const evitarGanador = () => {
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguepala2");
             },5000);
+            let palaNotice = document.getElementById("noticeTextPala2");
+            palaNotice.classList.add("noticetextpalavisible");
+            setTimeout(()=>{
+                palaNotice.classList.remove("noticetextpalavisible");
+            },5000);
             tablero[pos3].innerHTML = printTokenP2(tokenselectP2);
             tablero[pos3].classList.add("colorP2");
             miTablero[pos3] = "O"
@@ -296,6 +333,11 @@ const evitarGanador = () => {
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguepala2");
             },5000);
+            let palaNotice = document.getElementById("noticeTextPala2");
+            palaNotice.classList.add("noticetextpalavisible");
+            setTimeout(()=>{
+                palaNotice.classList.remove("noticetextpalavisible");
+            },5000);
             tablero[pos2].innerHTML = printTokenP2(tokenselectP2);
             tablero[pos2].classList.add("colorP2");
             miTablero[pos2] = "O"
@@ -306,6 +348,11 @@ const evitarGanador = () => {
             devilDialeg.classList.add("dialoguepala2");
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguepala2");
+            },5000);
+            let palaNotice = document.getElementById("noticeTextPala2");
+            palaNotice.classList.add("noticetextpalavisible");
+            setTimeout(()=>{
+                palaNotice.classList.remove("noticetextpalavisible");
             },5000);
             tablero[pos1].innerHTML = printTokenP2(tokenselectP2);
             tablero[pos1].classList.add("colorP2");
@@ -327,6 +374,11 @@ const evitarGanador2 = () => {
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguedevil2");
             },5000);
+            let devilNotice = document.getElementById("noticeTextDevil2");
+            devilNotice.classList.add("noticetextdevilvisible");
+            setTimeout(()=>{
+                devilNotice.classList.remove("noticetextdevilvisible");
+            },5000);
             tablero[pos3].innerHTML = printTokenP1(tokenselectP1);
             tablero[pos3].classList.remove("colorP2");
             tablero[pos3].classList.add("colorP1");
@@ -339,6 +391,11 @@ const evitarGanador2 = () => {
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguedevil2");
             },5000);
+            let devilNotice = document.getElementById("noticeTextDevil2");
+            devilNotice.classList.add("noticetextdevilvisible");
+            setTimeout(()=>{
+                devilNotice.classList.remove("noticetextdevilvisible");
+            },5000);
             tablero[pos2].innerHTML = printTokenP1(tokenselectP1);
             tablero[pos2].classList.remove("colorP2");
             tablero[pos2].classList.add("colorP1");
@@ -350,6 +407,11 @@ const evitarGanador2 = () => {
             devilDialeg.classList.add("dialoguedevil2");
             setTimeout(()=>{
                 devilDialeg.classList.remove("dialoguedevil2");
+            },5000);
+            let devilNotice = document.getElementById("noticeTextDevil2");
+            devilNotice.classList.add("noticetextdevilvisible");
+            setTimeout(()=>{
+                devilNotice.classList.remove("noticetextdevilvisible");
             },5000);
             tablero[pos1].innerHTML = printTokenP1(tokenselectP1);
             tablero[pos1].classList.remove("colorP2");

@@ -26,7 +26,7 @@ input::placeholder {
 .bigcontainer {
     background-color: black;
     height: 100vh;
-    background-image: url(../img/mobile\ bg\ select\ player.jpeg);
+    background-image: url(../img/diablo-4-video-game-art-blizzard-entertainment-hd-wallpaper-b55a9b00dc372862168bad0cacd395af.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -39,6 +39,8 @@ input::placeholder {
     height: 45vh;
     display: flex;
 }
+
+/* P1 TOKENS AREA */
 
 .p1token {
     height: 45vh;
@@ -72,6 +74,8 @@ input::placeholder {
     color: turquoise;
     transform: scale(1.3);
 }
+
+/* FLICKER TEXT */
 
 .textflicker {
     animation-name: parpadeo;
@@ -117,6 +121,8 @@ input::placeholder {
     color: red;
 }
 
+/* SELECT TYPE PLAYER BUTTONS */
+
 .typePlayerBox {
     display: flex;
     justify-content: space-between;
@@ -160,6 +166,8 @@ input::placeholder {
     transform: scale(1.3);
 }
 
+/* P1 GIF */
+
 .p1gif {
     height: 45vh;
     width: 50vw;
@@ -176,7 +184,7 @@ input::placeholder {
     border: 2px solid black;
 }
 
-/* BUTTON SELECT AREA */
+/* BUTTONS SELECT AREA */
 
 .colselect {
     height: 10vh;
@@ -189,7 +197,7 @@ input::placeholder {
 .selectbtn {
     background-color: black;
     height: 4em;
-    width: 40vw;
+    width: 45vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -219,6 +227,8 @@ input::placeholder {
     background-color: rgba(235, 99, 46, 0.418);
 }
 
+/* P2 GIF */
+
 .p2gif {
     height: 45vh;
     width: 50vw;
@@ -228,6 +238,8 @@ input::placeholder {
     justify-content: space-around;
     align-items: center;
 }
+
+/* P2 TOKENS AREA */
 
 .p2token {
     height: 45vh;
@@ -294,6 +306,8 @@ input::placeholder {
     visibility: visible;
 }
 
+/* MEDIA QUERYS AREA */
+
 @media (min-width: 576px) {
 
     .selectgif {
@@ -350,7 +364,7 @@ input::placeholder {
 
     .bigcontainer {
         display: flex;
-        background-image: url(../img/diablo-4-video-game-art-blizzard-entertainment-hd-wallpaper-b55a9b00dc372862168bad0cacd395af.jpg);
+
     }
     
     .colp1 {
