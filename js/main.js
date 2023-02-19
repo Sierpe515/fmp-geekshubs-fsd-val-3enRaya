@@ -436,6 +436,23 @@ const jugadaCpu = () => {
     }
 }
 
+const jugadaCpuInicial = () => {
+    
+    if (fichacpu == false){
+        let aleatorio = tablero[Math.floor(Math.random() * tablero.length)];
+        while (aleatorio.innerHTML !== ""){
+            aleatorio = tablero[Math.floor(Math.random() * tablero.length)]
+        }
+        aleatorio.innerHTML = printTokenP1(tokenselectP1);
+        aleatorio.classList.remove("colorP2");
+        aleatorio.classList.add("colorP1");
+        miTablero[aleatorio.id] = "X";
+        contadorTurnosP1++;
+        fichaP1--;
+        fichacpu = true
+    }
+}
+
 const jugadaCpu2 = () => {
     
     if (fichacpu == false){
@@ -473,7 +490,7 @@ const robarCpu2 = () => {
         aleatorio.innerHTML = "";
         miTablero[aleatorio.id] = "";
         console.log(aleatorio);
-        fichaP2++;
+        fichaP1++;
     }
 }
 
@@ -601,7 +618,7 @@ if (typeP1pl === "p1Player" && typeP2pl === "p2Cpu"){
                     jugadaCpu();
     
                     fichaP2--;
-                    fichasPlayer2.innerHTML = `Fichas: ${fichaP2}`
+                    fichasPlayer2.innerHTML = `Fichas: ${fichaP2}`;
     
                     fichaBorrada = false
 
@@ -640,20 +657,21 @@ if (typeP1pl === "p1Cpu" && typeP2pl === "p2Player"){
                 const tokenselectP2 = sessionStorage.getItem('tokenChosenP2')
                 console.log(tokenselectP2)
                 
-                jugadaCpu2();
+                jugadaCpuInicial();
     
             celda.addEventListener('click', ()=> {
 
-                if((celda.innerHTML === "") && (fichaP1 > 0)){
+                if((celda.innerHTML === "") && (fichaP1 >= 0)){
                     
                     celda.innerHTML = printTokenP2(tokenselectP2);
                     celda.classList.add("colorP2");
                     
-                    fichaP1-- ;
+                    fichaP2-- ;
+                    fichasPlayer1.innerHTML = `Fichas: ${fichaP1}`;
     
                     miTablero[celda.id] = "O";
     
-                    fichaBorrada = false
+                    fichaBorrada = false;
     
                     contadorTurnosP2++;
                     contadTurnosP2.innerHTML = `Turnos: ${contadorTurnosP2}`;
@@ -671,18 +689,21 @@ if (typeP1pl === "p1Cpu" && typeP2pl === "p2Player"){
                     
                     jugadaCpu2();
 
-                    contadorTurnosP1++
-                    contadTurnosP1.innerHTML = `Turnos: ${contadorTurnosP1}`
+                    fichaP1--;
+                    fichasPlayer2.innerHTML = `Fichas: ${fichaP2}`;
+
+                    contadorTurnosP1++;
+                    contadTurnosP1.innerHTML = `Turnos: ${contadorTurnosP1}`;
                     sessionStorage.setItem("turnosP1", (contadorTurnosP1));
 
                     comprueboGanador();
     
-                } else if ((celda.innerHTML === printTokenP2(tokenselectP2)) && (fichaP1 === 0)){
+                } else if ((celda.innerHTML === printTokenP2(tokenselectP2)) && (fichaP2 === 0)){
                 console.log('3');
     
                     celda.innerHTML = "";
                     fichaBorrada = true;
-                    fichaP1++;
+                    fichaP2++;
     
                     miTablero[celda.id] = "";
                 }
